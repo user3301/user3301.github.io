@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Spring框架配置入门"
-date: 2012-05-22
+date: 2017-06-11
 excerpt: "A howto guide on spring framework configuation and usage."
 tags: [spring jdbcTemplate, AOP, XMLConfiguration]
 comments: true
@@ -9,8 +9,6 @@ comments: true
 
 Spring Framework
 ==================
-Navigation
-------------------
 ## Spring ioC
 1. [Spring ioC原理](https://github.com/user3301/spring/blob/master/Spring_ioC.md)
 2. [Bean的实例化](https://github.com/user3301/spring/blob/master/Bean_Instantiation.md)
