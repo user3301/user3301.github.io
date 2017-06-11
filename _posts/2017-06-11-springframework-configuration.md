@@ -24,5 +24,3 @@ _____
 1. [jdbcTemplate的CRUD操作](https://github.com/user3301/spring4.x/blob/master/jdbcTemplate.md)
 2. [Spring中数据库连接池c3p0配置以及业务层和dao层的jdbcTemplate注入](https://github.com/user3301/spring4.x/blob/master/Spring_c3p0_dao.md)
 3. [Spring中事务管理操作](https://github.com/user3301/spring4.x/blob/master/spring_transaction.md)
-{% if page.comments %}
-{% endif %}
