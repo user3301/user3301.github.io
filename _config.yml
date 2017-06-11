@@ -8,7 +8,7 @@ logo:               'assets/img/logo.png'
 background:         'assets/img/background-bonfire.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                https://taylantatli.github.io/Moon
+url:                https://user3301.github.io
 
 # Jekyll
 permalink:          /:title/
@@ -37,20 +37,20 @@ disqus_shortname:   taylantatli
   #ad-client:
   #ad-slot:
 #bing-verify:
-#email:
-twitter:            username
+email:              stan_gai@hotmail.com
+#twitter:            username
 facebook:           username
-github-url:         username
+github-url:         https://github.com/user3301
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
-#linkedin:          username
+linkedin:          https://www.linkedin.com/in/zhelun-gai-b93649118/
 #xing:              username
-instagram:          username
+instagram:          https://www.instagram.com/stanley_gai/?hl=en
 #lastfm:            username
 #tumblr:            username
 #medium:            '@username'
 #pinterest:         username
 #foursquare:        username
-steam:              username
+steam:              http://steamcommunity.com/id/ozuser3301
 #dribbble:          username
 #youtube:           username
 #youtube-channel:   channel
