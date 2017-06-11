@@ -4,7 +4,7 @@ bio:                'Silence makes big money.'
 description:        "Moon is a minimal, one column jekyll theme for your blog."
 reading_time:       true
 words_per_minute:   200
-logo:               'assets/img/logo.png'
+logo:               'assets/img/logo-bracket.png'
 background:         'assets/img/background-bonfire.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
@@ -40,17 +40,17 @@ disqus_shortname:   taylantatli
 email:              stan_gai@hotmail.com
 #twitter:            username
 facebook:           username
-github-url:         user3301/
+github-url:         user3301
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
-linkedin:           www.linkedin.com/in/zhelun-gai-b93649118/
+linkedin:           zhelun-gai-b93649118/
 #xing:              username
-instagram:          stanley_gai/
+instagram:          stanley_gai
 #lastfm:            username
 #tumblr:            username
 #medium:            '@username'
 #pinterest:         username
 #foursquare:        username
-steam:              ozuser3301/
+steam:              ozuser3301
 #dribbble:          username
 #youtube:           username
 #youtube-channel:   channel
