@@ -26,4 +26,4 @@ export PATH=$PATH:your maven upacked distribution/bin
 ```
 ![setup](https://github.com/user3301/user3301.github.io/blob/master/assets/img/maven_setup.png)</br>
 之后在命令行输入`mvn --version`可以来检测安装是否成功，结果如下，则证明maven已经安装到本机：</br>
-![success](assets/img/success.png)
+![success](https://github.com/user3301/user3301.github.io/blob/master/assets/img/success.png)
