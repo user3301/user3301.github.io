@@ -75,7 +75,7 @@ export PATH=$PATH:your maven upacked distribution/bin
 			<version>4.10</version>
 			<scope>test</scope>
 		</dependency>
-sdasd
+
 	</dependencies>
 ```
 依赖是通过依赖文件的坐标来锁定的，当依赖引入后`Maven`会首先去本地仓库寻找，如果本地仓库中不存在，maven会去中央仓库下载到本地仓库并引入工程。 其中`<scope>`标签表示此依赖的作用域。
@@ -93,3 +93,68 @@ sdasd
 * `mvn clean install` -> 表示清理和安装，会将打包安装到本地仓库，以便其他的项目可以调用
 * `mvn clean deploy` -> 运行清理和发布， 发布到私有服务器中， 企业工程中一般会给整个工程建立一个私有仓库，所有的开发者开发各自的模块，当发布到私有服务器中其他开发者可以方便引用，当用户调用一个依赖时，其运行调用的顺序为`本地仓库->私服->中央仓库`
 * `mvn archetype:generate` -> 在所在的路径下自动完成基本maven工程的骨架
+## `Maven`在团队开发中的便捷之处
+在团队开发中，不同的个体或者团队会承包不同的逻辑业务，当整合业务或者合并代码时，如果不同业务之间的jar包依赖不同或者版本不同，尤其是在不同业务层之间方法调用时候如果没有工程管理会使工作变得更加复杂，下面举一个简单的例子来说明`Maven`在工程管理上的便捷之处：
+* 假设A团队在一个web项目中开发`service`层逻辑，由于`Maven`项目是以模块`Artifact`来分类的，所以在`service`模块中有一方法假设为`helloWorld`:
+```
+package com.github.user3301.service;
+
+/**
+ * Created by User3301 on 6/18/2017.
+ */
+public class HelloWorld {
+
+    public void helloWorld() {
+        System.out.println("Hello World!");
+    }
+}
+```
+`pom.xml`配置文件如下：
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.user3301</groupId>
+    <artifactId>hello-first</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</project>
+```
+当开发`view`层的开发人员想要调用此方法时，只需要让`service`层的开发人员打包发布代码（deploy）到私服上面，`view`层开发人员通过在`pom.xml`中添加其坐标就能完成导入：
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.user3301</groupId>
+    <artifactId>hello-second</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.github.user3301</groupId>
+            <artifactId>hello-first</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency></dependencies>
+</project>
+```
+通过添加<dependency>能够找到以发布的`service`层所有业务逻辑，所以在`view`模块中我们可以成功调用`helloWorld`方法：
+```
+package com.github.user3301.view;
+
+import com.github.user3301.service.HelloWorld;
+
+/**
+ * Created by user3301 on 6/18/2017.
+ */
+public class HelloWorldView {
+
+    public static void main(String[] args) {
+        HelloWorld helloWorld = new HelloWorld();
+    }
+}
+```
+这个简单的小例子看出`Maven`在工程管理上的便捷之处。
