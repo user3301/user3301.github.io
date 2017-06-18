@@ -1,3 +1,4 @@
+---
 layout: post
 title: "SQL模糊查询算法优化"
 date: 2017-06-18
@@ -5,6 +6,7 @@ excerpt: "An optimized algorithm for sql fuzzy query."
 tags: [Java, SQL]
 comments: true
 ---
+
 之前在做一个`Swing`界面的点餐系统时候看到一个教程中关于使用`EJB`框架在`dao`层模糊查询的一个实现，之前在学习模糊匹配查询时代码是：
 
 ```
