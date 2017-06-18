@@ -1,6 +1,6 @@
 layout: post
 title: "SQL模糊查询算法优化"
-date: 2017-06-11
+date: 2017-06-18
 excerpt: "An optimized algorithm for sql fuzzy query."
 tags: [Java, SQL]
 comments: true

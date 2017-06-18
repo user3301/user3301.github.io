@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Maven工程搭建及配置"
-date: 2017-06-11
+date: 2017-06-17
 excerpt: "Guide to configuring Maven."
 tags: [Java, Maven]
 comments: true
