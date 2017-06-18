@@ -75,7 +75,7 @@ export PATH=$PATH:your maven upacked distribution/bin
 			<version>4.10</version>
 			<scope>test</scope>
 		</dependency>
-
+sdasd
 	</dependencies>
 ```
 依赖是通过依赖文件的坐标来锁定的，当依赖引入后`Maven`会首先去本地仓库寻找，如果本地仓库中不存在，maven会去中央仓库下载到本地仓库并引入工程。 其中`<scope>`标签表示此依赖的作用域。
