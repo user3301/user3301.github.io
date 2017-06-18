@@ -5,7 +5,7 @@ description:        "User3301 is a Java fanboy, but he doesn't think Java is the
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/mona-dab.jpg'
-background:         'assets/img/controller.jpg'
+background:         'assets/img/darksouls.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
 url:                https://user3301.github.io
