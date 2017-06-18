@@ -33,6 +33,7 @@ export PATH=$PATH:your maven upacked distribution/bin
 其仓库`repsository`的默认路径为`${user.home}/.m2/repository`，用户可以通过修改`Maven`文件夹中的
 `conf`文件夹下的`settings.xml`文件中的`localRepository`标签来修改本地仓库路径，建议将本地仓库建立
 在本机不会被删除的路径中：
+
 ```
 <!-- localRepository
    | The path to the local repository maven will use to store artifacts.
@@ -42,9 +43,11 @@ export PATH=$PATH:your maven upacked distribution/bin
   -->
   <localRepository>D:/Java/maven/repository</localRepository>
 ```
+
 以上配置将会在本机的`D`盘下的`/Java/Maven/repository`中下载工程依赖文件。
 ## 项目构建文件配置`pom.xml`
 `Maven`项目的配置信息保存在项目文件夹下的`pom.xml`配置文件中，其格式为：
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -56,16 +59,20 @@ export PATH=$PATH:your maven upacked distribution/bin
 
 </project>
 ```
+
 其中
+
 ```
 <groupId>com.github.user3301.hello</groupId>
 <artifactId>hello-first</artifactId>
 <version>SNAPSHOT0.0.1</version>
 ```
+
 以上属性是工程坐标，`groupId`表示项目名称，`artifactId`表示项目的模块名称（命名建议使用`项目名-模块名`的格式）,`version`表示
 这个项目的版本名称。</br>
 ## 依赖添加
 在`Maven`项目中添加一个jar包依赖是用过在`pom.xml`配置文件中添加`<dependency>`标签实现的，例如想要在工程中添加`Junit`类包：
+
 ```
 <dependencies>
 
@@ -78,6 +85,7 @@ export PATH=$PATH:your maven upacked distribution/bin
 
 	</dependencies>
 ```
+
 依赖是通过依赖文件的坐标来锁定的，当依赖引入后`Maven`会首先去本地仓库寻找，如果本地仓库中不存在，maven会去中央仓库下载到本地仓库并引入工程。 其中`<scope>`标签表示此依赖的作用域。
 ## 代码创建和测试创建
 * 源代码在`maven`工程中的`/src/main/java`中
@@ -96,6 +104,7 @@ export PATH=$PATH:your maven upacked distribution/bin
 ## `Maven`在团队开发中的便捷之处
 在团队开发中，不同的个体或者团队会承包不同的逻辑业务，当整合业务或者合并代码时，如果不同业务之间的jar包依赖不同或者版本不同，尤其是在不同业务层之间方法调用时候如果没有工程管理会使工作变得更加复杂，下面举一个简单的例子来说明`Maven`在工程管理上的便捷之处：
 * 假设A团队在一个web项目中开发`service`层逻辑，由于`Maven`项目是以模块`Artifact`来分类的，所以在`service`模块中有一方法假设为`helloWorld`:
+
 ```
 package com.github.user3301.service;
 
@@ -109,7 +118,9 @@ public class HelloWorld {
     }
 }
 ```
+
 `pom.xml`配置文件如下：
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -122,7 +133,9 @@ public class HelloWorld {
     <version>1.0-SNAPSHOT</version>
 </project>
 ```
+
 当开发`view`层的开发人员想要调用此方法时，只需要让`service`层的开发人员打包发布代码（deploy）到私服上面，`view`层开发人员通过在`pom.xml`中添加其坐标就能完成导入：
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -141,7 +154,9 @@ public class HelloWorld {
         </dependency></dependencies>
 </project>
 ```
+
 通过添加<dependency>能够找到以发布的`service`层所有业务逻辑，所以在`view`模块中我们可以成功调用`helloWorld`方法：
+
 ```
 package com.github.user3301.view;
 
@@ -157,4 +172,5 @@ public class HelloWorldView {
     }
 }
 ```
+
 这个简单的小例子看出`Maven`在工程管理上的便捷之处。
