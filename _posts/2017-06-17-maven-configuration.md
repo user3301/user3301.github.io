@@ -4,6 +4,7 @@ title: "Maven工程搭建及配置"
 date: 2017-06-17
 excerpt: "Guide to configuring Maven."
 tags: [Java, Maven]
+feature: http://ww1.sinaimg.cn/large/6b1abb29gy1fgrys0itmrj20hi0hiwes.jpg
 comments: true
 ---
 # Maven工程搭建及配置

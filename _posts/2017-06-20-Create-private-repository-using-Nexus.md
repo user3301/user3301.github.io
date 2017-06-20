@@ -4,10 +4,10 @@ title: "使用Nexus搭建Maven本地仓库"
 date: 2017-06-20
 excerpt: "Create private repository using Nexus."
 tags: [Java, Maven]
-feature: http://ww1.sinaimg.cn/large/6b1abb29gy1fgruojx0qaj21jk0p2wfh.jpg
+feature: http://ww1.sinaimg.cn/large/6b1abb29gy1fgrys0itmrj20hi0hiwes.jpg
 comments: true
 ---
-#What is Nexus?
+# What is Nexus?
 `Nexus`是Sonatype公司出品的一款仓库管理器，它能够简化用户管理`Maven`依赖仓库的jar包，包括中央仓库和私人仓库的配置，还有私服的搭建。 官方下载地址：[Download](https://www.sonatype.com/download-oss-sonatype)，其中包括付费版与免费版，基本上简单的私服搭建免费版will do the job。</br>
 # 为什么要搭建私服？
 在做项目的过程中往往会依赖一些中央仓库中没有的依赖，比如你的工程需要一个朋友开发的工具类，这时候如果你想让这个工具类分享给开发团队来使用就可以上传到私服上面，然后通过给这个工具类jar包添加`<groupId>`等属性方便他人引用。`Nexus`正是这样一款能够大大简化私服仓库的管理工具，闲言碎语不要讲，下面来说下安装`Nexus`的流程及启动和访问流程。
