@@ -26,7 +26,7 @@ export PATH=$PATH:your maven upacked distribution/bin
 ```
 ![maven setup](http://ww1.sinaimg.cn/large/6b1abb29gy1fgrp6fu1y3j20cg00waa3.jpg)
 之后在命令行输入`mvn --version`可以来检测安装是否成功，结果如下，则证明maven已经安装到本机：</br>
-![success](img/success.png)
+![success](http://ww1.sinaimg.cn/large/6b1abb29gy1fgrpai53lxj20hm02hmxp.jpg)
 ##指定本地仓库
 在使用`Maven`自动构建工程时，`Maven`会将工程中的jar包依赖下载到本地仓库，其运行顺序为先
 检测所依赖是否在本地仓库中已经存在，如果不存在将会到`Apache`的中央仓库下载（需要网络连接），
