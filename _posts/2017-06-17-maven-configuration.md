@@ -24,7 +24,7 @@ comments: true
 export M2_HOME=your maven unpacked distribution
 export PATH=$PATH:your maven upacked distribution/bin
 ```
-![maven](assets/img/maven_setup.png)
+![maven setup](http://ww1.sinaimg.cn/large/6b1abb29gy1fgrp6fu1y3j20cg00waa3.jpg)
 之后在命令行输入`mvn --version`可以来检测安装是否成功，结果如下，则证明maven已经安装到本机：</br>
 ![success](img/success.png)
 ##指定本地仓库
