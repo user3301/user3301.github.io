@@ -4,7 +4,7 @@ title: "使用Nexus搭建Maven本地仓库"
 date: 2017-06-20
 excerpt: "Create private repository using Nexus."
 tags: [Java, Maven]
-feature: http://ww1.sinaimg.cn/large/6b1abb29gy1fgrys0itmrj20hi0hiwes.jpg
+feature: http://ww1.sinaimg.cn/large/6b1abb29gy1fgryzol04kj21z41b84df.jpg
 comments: true
 ---
 # What is Nexus?

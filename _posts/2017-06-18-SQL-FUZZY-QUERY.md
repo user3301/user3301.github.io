@@ -4,7 +4,7 @@ title: "SQL模糊查询算法优化"
 date: 2017-06-18
 excerpt: "An optimized algorithm for sql fuzzy query."
 tags: [Java, SQL]
-feature: http://ww1.sinaimg.cn/large/6b1abb29gy1fgrys0itmrj20hi0hiwes.jpg
+feature: http://ww1.sinaimg.cn/large/6b1abb29gy1fgryzol04kj21z41b84df.jpg
 comments: true
 ---
 
