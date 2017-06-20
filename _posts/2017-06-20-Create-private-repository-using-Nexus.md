@@ -4,7 +4,7 @@ title: "使用Nexus搭建Maven本地仓库"
 date: 2017-06-20
 excerpt: "Create private repository using Nexus."
 tags: [Java, Maven]
-feature: http://ww1.sinaimg.cn/large/6b1abb29gy1fgrtbdz6g2j20jg0boglz.jpg
+feature: http://ww1.sinaimg.cn/large/6b1abb29gy1fgruojx0qaj21jk0p2wfh.jpg
 comments: true
 ---
 #What is Nexus?
@@ -24,6 +24,7 @@ comments: true
 ![](http://ww1.sinaimg.cn/large/6b1abb29gy1fgrudb8pfqj21az0gq76i.jpg)</br>
 在填写好`<groupId>`和`<artifactId>`等信息后我们点击页面上的`add artifact`然后点击`upload
  artifact`就完成上传了。之后我们可以在`summary`中找到上传的私服仓库的地址：
+
  ```
  <repositories>
         <repository>
@@ -35,4 +36,5 @@ comments: true
         </repository>
     </repositories>
  ```
+
  将此仓库地址加入到工程的`pom.xml`中去，之后在添加依赖就能够完成三方jar包依赖了。
