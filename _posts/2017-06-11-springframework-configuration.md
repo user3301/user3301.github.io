@@ -3,7 +3,7 @@ layout: post
 title: "Spring框架配置入门"
 date: 2017-06-11
 excerpt: "A howto guide on spring framework configuation and usage."
-tags: [Java, Hibernate]
+tags: [Java, Spring]
 feature: http://ww1.sinaimg.cn/large/6b1abb29gy1fgryzol04kj21z41b84df.jpg
 comments: true
 ---
