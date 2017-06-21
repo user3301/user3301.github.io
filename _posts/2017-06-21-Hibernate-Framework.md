@@ -10,7 +10,6 @@ comments: true
 
 # hibernateorm5.x
 
-__________
 1. [Hibernate框架简介](https://github.com/user3301/hibernateorm5.x/blob/master/hibernate_ORM.md)
 2. [Hibernate环境搭建](https://github.com/user3301/hibernateorm5.x/blob/master/hibernate_config.md)
 3. [核心配置文件与映射配置文件](https://github.com/user3301/hibernateorm5.x/blob/master/hibernate_configuration_file.md)
