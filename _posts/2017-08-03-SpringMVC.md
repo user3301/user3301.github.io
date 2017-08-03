@@ -47,11 +47,186 @@ Spring MVC是Spring框架的一个模块，所以Spring MVC 和Spring无需通�
 ### 视图 `View` （需要程序员开发jsp页面）
 `View`是一个接口，实现类支持不同的`View`类型（jsp，freemarker，pdf）
 
-## 入门程序案例
-### 需求
+## `SpringMVC`环境搭建
+* 所需要的`Jar`包依赖：
+
+```
+<dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>3.0.4.RELEASE</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>4.3.10.RELEASE</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>3.0.4.RELEASE</version>
+        </dependency>
+    </dependencies>
+```
 
 ### 前端控制器配置
 
+```
+<!--配置前端控制器-->
+   <servlet>
+       <servlet-name>springmvc</servlet-name>
+       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+       <!--contextConfigLocation配置springmvc加载的配置文件（配置处理器映射器，适配器等等）,如果不配置默认加载/WEB-INF/servlet下servlet.xml(springmvc-servlet.xml)-->
+       <init-param>
+           <param-name>contextConfigLocation</param-name>
+           <param-value>classpath:springmvc.xml</param-value>
+       </init-param>
+   </servlet>
+```
+
 ### 处理器映射器配置
+```
+<servlet-mapping>
+       <servlet-name>springmvc</servlet-name>
+       <!--第一种：*.action 访问以.action结尾 由DispatcherServlet进行解析
+           第二种：/，访问的地址都由DispatchServlet进行解析，对于静态文件的解析需要配置不让DispatcherServlet进行解析
+           使用此种方式可以实现RESTful风格的url
+           第三种： /*， 这样配置不对，使用这种配置，最终要转发到一个jsp页面，仍然会由DispatcherServlet解析jsp地址，不能根据jsp页面找到handler，会报错
+       -->
+       <url-pattern>*.action</url-pattern>
+   </servlet-mapping>
+```
 
 ### 处理器适配器配置
+在`resource`文件夹下创建`springmvc.xml`配置文件，在配置文件中配置`Handler`,`HandlerAdapter`和视图解析器：
+
+```
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+    <!--配置Handler-->
+    <bean name="/queryItems.action" class="com.github.user3301.springmvc.controller.ItemsController1"/>
+
+<!--处理器映射器, 将bean的name作为url进行查找，需要在配置Handler时指定bean name（就是url）-->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+
+    <!--处理器适配器, 所有的处理器适配器都实现了HandlerAdapter接口-->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    <!--视图解析器 解析jsp视图-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
+</beans>
+```
+
+创建好后需要在`web.xml`配置文件中的前端控制器中配置`contextConfigLocation`的引用。
+
+## 创建`Handler` 对象
+
+在工程的`controller`包下创建`ItemsController1`对象:
+
+```
+package com.github.user3301.springmvc.controller;
+
+import com.github.user3301.springmvc.po.Item;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ItemsController1 implements Controller {
+
+    public ModelAndView handleRequest(javax.servlet.http.HttpServletRequest httpServletRequest, javax.servlet.http.HttpServletResponse httpServletResponse) throws Exception {
+        //调用service查找数据库，例如查找多个item
+        List<Item> list = new ArrayList<Item>();
+        //向list中填充静态数据
+        Item item_1 = new Item();
+        item_1.setId(1);
+        item_1.setName("power armor");
+
+        Item item_2 = new Item();
+        item_2.setId(2);
+        item_2.setName("fallout 4");
+
+        list.add(item_1);
+        list.add(item_2);
+
+        //返回ModelAndView
+        ModelAndView modelAndView = new ModelAndView();
+        //向ModelAndView对象中添加，相当于request中的setAttribut,在jsp页面中通过list取数据
+        modelAndView.addObject("list",list);
+        //指定视图
+        modelAndView.setViewName("/WEB-INF/itemlist.jsp");
+
+        return modelAndView;
+    }
+}
+```
+
+其中当`handleRequest`方法中写需求逻辑，比如调用`service`层查询持久层数据，之后通过建立实体类对象后通过`setter`方法填充数据，之后创建`ModelAndView`对象后将封装的结果或结果集`add`到此对象， 之后`setViewName`方法中传入需要转发到的视图页面url，视图页面就可以通过`jstl`标签获取结果。
+
+## 视图中获取结果
+
+假设后台将数据传到`intemlist.jsp`页面中，其中通过`jstl`标签获取传来的封装数据：
+
+
+```
+<%@ page contentType="text/html;charset=UTF-8;" language="java" pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<html>
+<head>
+    <title>show items page</title>
+</head>
+<body>
+
+<div>
+
+    <tr>
+        <td>name</td>
+        <td>id</td>
+    </tr>
+    <c:forEach items="${list}" var="item">
+    <tr>
+        <td>${item.name}</td>
+        <td>${item.id}</td>
+    </tr>
+    </c:forEach>
+</div>
+
+</body>
+</html>
+```
+
