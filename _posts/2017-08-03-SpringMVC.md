@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SpringNVC详解"
+title: "SpringMVC详解"
 date: 2017-08-03
 excerpt: "Understanding Spring MVC."
 tags: [Java, Springmvc]
