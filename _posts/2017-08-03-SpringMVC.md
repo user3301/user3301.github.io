@@ -230,3 +230,129 @@ public class ItemsController1 implements Controller {
 </html>
 ```
 
+## 非注解的处理器映射器和处理器适配器
+
+### 非注解映射器
+
+1. `BeanNameUrlHandlerMapping`此映射器通过`Handler`的`name`属性作为`url`来映射处理器：
+
+```
+<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+```
+
+```
+<!--配置Handler-->
+    <bean name="/queryItems.action" class="com.github.user3301.springmvc.controller.ItemsController1"/>
+```
+
+配置后用户通过访问`localhost:port-number/queryItems.action` 访问此`Handler`。
+
+2. `SimpleUrlHandlerMapping` 此映射器通过`prop`属性配置对应的`Handler`的`id`属性来形成映射：
+
+```
+<!--简单url映射-->
+   <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+       <property name="mappings">
+           <props>
+               <!--对itemsController1进行url映射，url为/queryItems.action-->
+               <prop key="/queryItems1.action">itemsController1</prop>
+           </props>
+       </property>
+   </bean>
+```
+
+与此同时，如果要与`itemsController1`形成映射，需要在配置`Handler`时给`itemsController1`添加`id`属性：
+
+```
+<bean id="itemsController1" name="/queryItems.action" class="com.github.user3301.springmvc.controller.ItemsController1"/>
+```
+
+之后映射配置完成，在配置文件中可以以上两种配置共存，例如我们把简单url映射配置中的 `<prop key="/queryItems1.action">`改为`<prop key="/queryItem2.action">`，用户可以通过`BeanNameUrlHandlerMapping`配置的url访问同时也能够通过`SimpleUrlHandlerMapping`中配置的url访问到同一个`Handler`.
+
+### 非注解适配器
+1. `SimpleControllerHandlerAdapter` 此适配器要求`Handler`对象实现`controller`接口和接口中的`handleRequest`方法：
+
+```
+public class ItemsController1 implements Controller {
+
+    public ModelAndView handleRequest(javax.servlet.http.HttpServletRequest httpServletRequest, javax.servlet.http.HttpServletResponse httpServletResponse) throws Exception {
+        //调用service查找数据库，例如查找多个item
+        List<Item> list = new ArrayList<Item>();
+        //向list中填充静态数据
+        Item item_1 = new Item();
+        item_1.setId(1);
+        item_1.setName("power armor");
+
+        Item item_2 = new Item();
+        item_2.setId(2);
+        item_2.setName("fallout 4");
+
+        list.add(item_1);
+        list.add(item_2);
+
+        //返回ModelAndView
+        ModelAndView modelAndView = new ModelAndView();
+        //向ModelAndView对象中添加，相当于request中的setAttribut,在jsp页面中通过list取数据
+        modelAndView.addObject("list",list);
+        //指定视图
+        modelAndView.setViewName("/WEB-INF/itemlist.jsp");
+
+        return modelAndView;
+    }
+}
+```
+
+2. `HttpRequestHandlerAdapter` 此适配器需要handler对象实现HttpRequestHandler接口:
+
+`Handler`编写：
+
+```
+public class ItemsController0 implements HttpRequestHandler{
+    public void handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        //调用service查找数据库，例如查找多个item
+        List<Item> list = new ArrayList<Item>();
+        //向list中填充静态数据
+        Item item_1 = new Item();
+        item_1.setId(1);
+        item_1.setName("power armor");
+
+        Item item_2 = new Item();
+        item_2.setId(2);
+        item_2.setName("fallout 4");
+
+        list.add(item_1);
+        list.add(item_2);
+
+        //填充数据
+        httpServletRequest.setAttribute("list",list);
+        //发送到视图
+        httpServletRequest.getRequestDispatcher("/WEB-INF/itemlist.jsp").forward(httpServletRequest,httpServletResponse);
+    }
+}
+```
+
+之后在`springmvc.xml`中配置访问url：
+
+```
+<!--配置Handler-->
+    <bean id="itemsController0" class="com.github.user3301.springmvc.controller.ItemsController0"/>
+
+    <!--简单url映射-->
+        <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+            <property name="mappings">
+                <props>
+                    <prop key="/queryItems0.action">ItemsController0</prop>
+                </props>
+            </property>
+        </bean>
+```
+
+之后用户将会通过访问`localhost:port-number/queryItems0.action`访问此`Handler`
+
+第二种方式可以实现通过`response`设置将相应数据设置成例如`JSON`等数据格式：
+
+```
+httpServletResponse.setCharacterEncoding("UTF-8");
+       httpServletResponse.setContentType("application/json; charset=utf-8");
+       httpServletResponse.getWriter().write("json");
+```
