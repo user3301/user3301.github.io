@@ -158,3 +158,64 @@ server.listen('8080');
 ```
 
 ## `POST`请求的处理
+`POST`请求应为不在url地址中传递，所以不能够使用解析url的办法来解析请求，`POST`请求是通过`request.on()`方法来持续接收`POST`请求(POST请求最大可以高达1G，所以为分段发送)：
+
+```
+//POST
+var str = '';
+//data数据 - 当有数据到达的时候就接收（很多次）
+request.on('data', function(){
+  str+=data;
+});
+//end数据 - 全部到达的时候执行（1次）
+request.on('end', function(){
+  var POST = querystring.parse(str);
+  console.log(POST);
+});
+```
+
+## 简单`Nodejs`服务器的编写
+掌握以上知识后我们可以通过这些类中的方法来搭建一个简单的可以处理`POST`和`GET`请求的服务器：
+
+```
+const http = require('http');
+const fs = require('fs');
+const querystring = require('querystring');
+const urlLib = require('url');
+
+var server = http.createServer(function(request,response) {
+  //GET
+  var obj = urlLib.parse(request.url,true);
+
+  var url = obj.pathname;
+  const GET = obj.query;
+
+  //POST
+  var str = '';
+  request.on('data', function(){
+    str+=data;
+  });
+  request.on('end', function(){
+    const POST = querystring.parse(str);
+  });
+
+if(url=='/user') {
+  
+}
+else {
+  var fileName = './www' + url;
+  fs.readFile(fileName,function(err,data){
+    if(err) {
+      response.write('404');
+    }
+    else {
+      response.write(data);
+    }
+    response.end();
+  });
+});
+}
+
+
+server.listen('8080');
+```
