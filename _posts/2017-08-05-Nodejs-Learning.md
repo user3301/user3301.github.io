@@ -11,7 +11,8 @@ comments: true
 # Nodejs服务器搭建（1）
 ![](http://ww1.sinaimg.cn/large/6b1abb29gy1fi8qun9yqrj20bs07mjrl.jpg)
 
-被一个从事20余年IT的大牛安利`Nodejs`作为服务器端将称为未来的主流，好奇之下看了下`Nodejs`的文档，经过短暂学习被它的简单的语法和没有像`java`作为服务器端的复杂性吸引，瞬间决定入坑。
+被一个从事20余年IT的大牛安利`Nodejs`作为服务器端将称为未来的主流，好奇之下看了下`Nodejs`的文档，经过短暂学习被它的简单的语法和没有像`java`作为服务器端的复杂性吸引，瞬间决定入坑。 
+![所有的练习案例代码](https://github.com/user3301/NodeExpress)
 
 ## 类的导入
 `Nodejs`中类的导入使用`require`方法，类似于`java`中的`import`，导入后就可以使用该类的方法:
