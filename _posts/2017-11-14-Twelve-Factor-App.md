@@ -20,7 +20,11 @@ comments: true
 
 ## 1 Codebase 代码库
 > One codebase tracked in revision control, many deploys
+
 “一份基准代码，多份部署”
+
+![](http://ww1.sinaimg.cn/large/6b1abb29gy1flhatlftlrj20cx09jmxi.jpg)
+
 
 
 
