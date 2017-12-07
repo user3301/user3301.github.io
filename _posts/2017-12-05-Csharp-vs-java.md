@@ -47,9 +47,11 @@ int y = 1;
 
 MyMethod(ref y); //方法调用
 ```
+
 输出参数（`out`）用于从方法体把数据传出到调用代码，他们非常类似引用参数，使用要求如下：
 * 必须在声明的调用中都使用修饰符。 输出参数的修饰符是out。
 * 实参必须是变量，不能是其他表达式类型。
+
 ```
 void MyMethod(out int val)
 {
@@ -69,6 +71,7 @@ MyMethod(out y)
 声明参数数组的语法：
 * 在数据类型前使用`params`修饰符
 * 在数据类型后防止一组空的方括号
+
 ```
  void ListInts(params int[] inVals)
  {
@@ -88,6 +91,6 @@ MyMethod(out y)
 ```
 
 ## 方法重载
-test
+
 
 
