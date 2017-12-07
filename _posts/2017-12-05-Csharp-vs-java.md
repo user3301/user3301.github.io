@@ -61,3 +61,33 @@ int y = 1;
 MyMethod(out y)
 ```
 
+输出参数必须在方法中重新赋值后使用，当out参数传入时，参数本来的值就不能重方法的内部访问，方法执行后，形参的名称失效，传入的参数被改变。
+## 参数数组
+参数数组类似java中的可变参数，他允许**零个或多个**实参传入方法，其重点要求如下：
+* 一个参数列表中只能有一个参数数组。
+* 如果有参数数组，那么它必须时列表中的最后一个。
+声明参数数组的语法：
+* 在数据类型前使用`params`修饰符
+* 在数据类型后防止一组空的方括号
+```
+ void ListInts(params int[] inVals)
+ {
+     if (vals!=null&&vals.Length!=0)
+            {
+                for (int i = 0; i < vals.Length; i++)
+                {
+                    Console.WriteLine("{0}",vals[i]);
+                }
+            }
+ }
+
+ //调用
+  ListInts(2,3,4,5);
+  ListInts(1,2);
+  ListInts();
+```
+
+## 方法重载
+
+
+
