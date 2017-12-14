@@ -90,7 +90,8 @@ MyMethod(out y)
   ListInts();
 ```
 
-## 方法重载
+## 扩展方法
+扩展方法是`c\#`
 
 
 
