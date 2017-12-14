@@ -91,7 +91,80 @@ MyMethod(out y)
 ```
 
 ## 扩展方法
-扩展方法是`c\#`
+扩展方法是`c#`中独有的特性，扩展方法允许编写和声明一个类之外的类关联的方法。
 
+其扩展方法编写的要求有：
+* 扩展方法必须被声明为`static`
+* 扩展方法声明所在的类也必须被声明为`static`
+* 扩展方法必须包含关键字`this`作为它的第一个参数类型，并在后面跟着它所扩展的类的名称
 
+```
+namespace ExtensionMethods
+{
+    sealed class MyData 
+    {
+        private double D1,D2,D3;
+        public MyData(double d1, double d2, double d3)
+        {
+            D1 = d1;
+            D2 = d2;
+            D3 = d3;
+        }
 
+        public double Sum() 
+        {
+            return D1 + D2 + D3;
+        }
+    }
+}
+```
+
+为此类添加扩展方法：
+
+```
+namespace ExtensionMethods 
+{
+    public static class ExtendMyData
+    {
+        public static double Average(this MyData md)
+        {
+            return md.Sum()/3;
+        }
+    }
+}
+```
+
+之后扩展的方法就可以通过类的实例对象来调用:
+
+```
+namespace ExtensionMethods 
+{
+    class Program
+    {
+        static void Main() 
+        {
+            MyData md = new MyData(3,4,5);
+            Console.WriteLine("Average: {0}",md.Average());
+        }
+    }
+}
+```
+
+在java中也可以实现给现有的类添加方法的办法，我们可通过写一个静态类之后将类的实例传入方法：
+
+```
+
+static class ExtendMyData {
+
+    public static double average(MyData md) {
+        return md.Sum()/3;
+    }
+
+    public static void Main(String[] args) {
+        MyData md = new MyData(3,4,5);
+        System.out.println("Average: " + ExtendMyData.average(md);
+    }
+}
+```
+
+`ExtendMyData`就像一个辅助工具类，每次要调用扩展的方法时都需要通过它来调用。
