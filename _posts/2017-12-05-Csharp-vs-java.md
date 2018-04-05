@@ -168,3 +168,6 @@ static class ExtendMyData {
 ```
 
 `ExtendMyData`就像一个辅助工具类，每次要调用扩展的方法时都需要通过它来调用。
+
+## LINQ
+`LINQ` 
