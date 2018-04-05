@@ -29,3 +29,12 @@ comments: true
  partial void UpdateJsonSerializerSettings(Newtonsoft.Json.JsonSerializerSettings settings);
 ```
 
+## 使用`TrimEnd`方法来确保url正确性
+
+```
+var urlBuilder = new StringBuilder();
+urlBuilder.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/TokenAuth/Authenticate");
+```
+
+
+
