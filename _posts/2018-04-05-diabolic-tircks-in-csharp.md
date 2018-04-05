@@ -14,6 +14,7 @@ comments: true
 ## `partial` 方法让settings变量后期改变：
 
 ```
+// Client 类constructor
  public Client(string baseUrl)
         {
             BaseUrl = baseUrl; 
