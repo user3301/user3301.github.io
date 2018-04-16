@@ -36,5 +36,22 @@ var urlBuilder = new StringBuilder();
 urlBuilder.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/TokenAuth/Authenticate");
 ```
 
+## 拼接`querystring`
+
+```
+ var urlBuilder = new StringBuilder();
+            urlBuilder.Append(_baseUrl != null ? _baseUrl.TrimEnd('/') : "").Append("/api/audiofiles?");
+            urlBuilder.Append("filename=").Append(filename).Append("&");
+            if (customerkey != null)
+            {
+                urlBuilder.Append("customerkey=").Append(customerkey).Append("&");
+            }
+            urlBuilder.Append("processmode=").Append(processmode == ProcessModeEnum.StoreandProcess ? 1 : 0).Append("&");
+            urlBuilder.Append("deleteafterprocessing=").Append(deleteafterprocessing).Append("&");
+            urlBuilder.Append("forceoverwrite=").Append(forceoverwrite).Append("&");
+            urlBuilder.Length--; 
+```
+
+最后使用`Length--`来去除多余的`&`。
 
 
