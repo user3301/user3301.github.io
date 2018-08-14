@@ -54,4 +54,19 @@ urlBuilder.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Toke
 
 最后使用`Length--`来去除多余的`&`。
 
+## null vs String.Empty vs ""
+`null`表示string值为`no value`;</br>
+`""`表示string值为`a blank string`;</br>
+`String.Empty`值同样为`a blank string`;</br>
+其中`""`和`String.Empty`的区别是什么呢？首先看下`String`类的源代码：
+```
+public sealed class String {
+    //...
+    public static readonly String Empty = "";
+    //...
+}
+```
+由此得知`String.Empty`是`String`类中的一个静态只读常量，当给`string`类型赋值时如果使用'""'则代表创建一个新string类型然后赋值，`String.Empty`则是将静态只读常量引用赋值给当前string.
+
+
 
