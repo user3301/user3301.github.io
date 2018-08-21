@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: post
 title: Leetcode solutions
 excerpt: "My solution to Leetcode algorithm challenges"
 project: true
