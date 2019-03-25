@@ -26,5 +26,11 @@ User3301 is a person who loves to bring his culinary knowledge to the programmin
                 ▀▒▀▐▄█▄█▌▄░▀▒▒░░░░░░░░░░▒▒▒
 ```
 
-User3301 is also a long time lurker in [Imgur.com](https://imgur.com/). Unlike most imgurians, user3301 is never being toxic towards redditors
+User3301 is also a long time lurker in [Imgur.com](https://imgur.com/). Unlike most imgurians, user3301 is never being toxic towards redditors.
+
+## Skills
+* Programming Languages Proficiency 
+> User3301 has been used several programming languages in both personal & business environments. Just like most imgurians, his opinion changes around 20 times day, even about politics, let alone choosing the right programming language. Most recently, user3301 uses **Python** and **C#(.Net Core)** quite often as C# is his boss's choice and python is used to make his life a bit easier when it can quickly build up a prototype to prove if his idea is a dead end or not beforehand.
+* Algorithms & Data Structure
+> 
 
