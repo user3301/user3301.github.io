@@ -4,7 +4,7 @@ title:  "Leetcode solutions"
 date:   2018-08-21
 excerpt: "My solution to Leetcode algorithm challenges."
 project: true
-tag:
+tag: [leetcode, algorithm, data structure]
 comments: true
 ---
 
