@@ -10,9 +10,9 @@ comments: false
 
 ## About User3301
 User3301 is a person who loves to bring his culinary knowledge to the programming world - he always writes 'write once, debug everywhere' aka the 'spaghetti code' and vice versa. He often cooks himself Fibonacci meals, and the recipe is:
-$
-Fib(today's meal) = Fib(yesterday's meal) + Fib(The day before yesterday's meal)
-$
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+$Fib(today's\ meal) = Fib(yesterday's\ meal) + Fib(The\ day\ before\ yesterday's\ meal)$
+
 
  So if one looks at things positively, it is very beneficial to work alongside with user3301 as debugging and refactoring his code is a good exercise to make them aware of common traps they can fall into while coding. Hence user3301 is a gem of the agile development team if you see things from other angle.
 
