@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Clean Code Tips&Tricks"
+title: "Clean Code Tips"
 date: 2019-03-26
 excerpt: ""
 tags: [Clean Code]
