@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Dictionary(Hashmap)[Easy]"
-date:   2019-04-08
-excerpt: "Decode common patterns used to algorithm problems related to hashmap(dictionary)"
-project: true
-tag: [leetcode, algorithm, data structure]
+title: "Dictionary(Hashmap)[Easy]"
+date: 2019-04-08
+excerpt: "Common patterns used to algorithm problems related to dictionary"
+tags: [algorithms, leetcode, data structure]
+feature: http://ww1.sinaimg.cn/large/6b1abb29gy1fgryzol04kj21z41b84df.jpg
 comments: true
 ---
 
