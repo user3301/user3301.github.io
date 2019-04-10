@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Dictionary(Hashmap)[Easy]"
+title: "Dictionary(Hashmap)"
 date: 2019-04-08
 excerpt: "Common patterns used to algorithm problems related to dictionary"
 tags: [algorithms, leetcode, data structure]
@@ -36,3 +36,9 @@ MyObject value = null;
 if (!myDictionary.TryGetValue(key, out value)) { /* key doesn't exist */ }
 ```
 Dictionary's has a ContainsKey method that can help deal with the previous two problems.
+
+## Find Duplicate in list/array
+
+Related Question:
+
+[217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
