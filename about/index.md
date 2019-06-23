@@ -9,12 +9,9 @@ comments: false
 <center> <b>Hodor.</b> Because "Hello world" is too mainstream.</center>
 
 ## About User3301
-User3301 is a person who loves to bring his culinary knowledge to the programming world - he always writes 'write once, debug everywhere' aka the 'spaghetti code' and vice versa. He also cooks himself `Fibonacci Meals`, and the recipe is:
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
-Fib(today's\ meal) = Fib(yesterday's\ meal) + Fib(The\ day\ before\ yesterday's\ meal)
+Traditional Chineses software developer possesses significant knowledge, technical aptitude and hands-on experience with  `Acupuncture`, `Dumpling making`, `Astrology` and last but not least - `Computer Science`. 
 
-
- So if one looks at things positively, it is very beneficial to work alongside with user3301 as debugging and refactoring his code is a good exercise to make them aware of common traps they can fall into while coding. Hence user3301 is a gem of the agile development team if you see things from other angle.
+ 
 
 ```
 
