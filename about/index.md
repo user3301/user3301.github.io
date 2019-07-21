@@ -10,33 +10,30 @@ comments: false
 
 ## About User3301
 Traditional Chineses software developer possesses significant knowledge, technical aptitude and hands-on experience with  `Acupuncture`, `Dumpling making`, `Astrology` and last but not least - `Computer Science`. 
+I always consult the FengShui charts to make sure the day is a good day to deploy staging build to production environment, so yeah, the code is all in good hands.
+
 
  
 
 ```
+/***
+  ┌───┐   ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┐
+  │Esc│   │ F1│ F2│ F3│ F4│ │ F5│ F6│ F7│ F8│ │ F9│F10│F11│F12│ │P/S│S L│P/B│  ┌┐    ┌┐    ┌┐
+  └───┘   └───┴───┴───┴───┘ └───┴───┴───┴───┘ └───┴───┴───┴───┘ └───┴───┴───┘  └┘    └┘    └┘
+  ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐ ┌───┬───┬───┐ ┌───┬───┬───┬───┐
+  │~ `│! 1│@ 2│# 3│$ 4│% 5│^ 6│& 7│* 8│( 9│) 0│_ -│+ =│ BacSp │ │Ins│Hom│PUp│ │N L│ / │ * │ - │
+  ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┼───┼───┤ ├───┼───┼───┼───┤
+  │ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │{ [│} ]│ | \ │ │Del│End│PDn│ │ 7 │ 8 │ 9 │   │
+  ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ └───┴───┴───┘ ├───┼───┼───┤ + │
+  │ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │: ;│" '│ Enter  │               │ 4 │ 5 │ 6 │   │
+  ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────────┤     ┌───┐     ├───┼───┼───┼───┤
+  │ Shift  │ Z │ X │   │   │ B │ N │ M │< ,│> .│? /│  Shift   │     │ ↑ │     │ 1 │ 2 │ 3 │   │
+  ├─────┬──┴─┬─┴──┬┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤  ───┼───┼───┐ ├───┴───┼───┤ E││
+  │     │ Win│Alt │         Space         │ Alt│ Fn │ Cl │Ctrl│ │ ← │ ↓ │ → │ │   0   │ . │←─┘│
+  └─────┴────┴────┴───────────────────────┴────┴────┴────┴────┘ └───┴───┴───┘ └───────┴───┴───┘
+ /
 
-                ░░░░░░░░░░░░░░░░░░░░░░░░▄░░
-                ░░░░░░░░░▐█░░░░░░░░░░░▄▀▒▌░
-                ░░░░░░░░▐▀▒█░░░░░░░░▄▀▒▒▒▐
-                ░░░░░░░▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐
-                ░░░░░▄▄▀▒░▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐
-                ░░░▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌
-                ░░▐▒▒▒▄▄▒▒▒▒░░░▒▒▒▒▒▒▒▀▄▒▒
-                ░░▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐
-                ░▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄
-                ░▌░▒▄██▄▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒
-                ▀▒▀▐▄█▄█▌▄░▀▒▒░░░░░░░░░░▒▒▒
 ```
 
-<!-- User3301 is also a long time lurker in [Imgur.com](https://imgur.com/). Unlike most imgurians, user3301 is never being toxic towards redditors. -->
 
-## Skills
-* Programming Languages Proficiency 
-1. `C#` - Because it's his current boss's language of choice;
-2. `Python` - Not only making his life a lot easier by affording him to sketch out a prototype quickly to prove some of his initial idea but also allows him to visualize some heavy lifting stuff in `Jupyter Notebook` to non-programmers.
-3. `Java` - Used to be a `Java` fanboy because it is his first programming language he learnt from university and worked as a Java developer for a while. Now he still uses `Java` on and off for some out sourcing tasks and solving some algorithm riddles on [Leetcode](https://leetcode.com/user3301/).
-4. `Javascript & Typescript` - Needs to have the literacy of these two languages in order to have an intelligent conversation with front-end guys.
-5. `C++` - Not a pro.
-
-![css is awesome](assets\img\css.png)
 
