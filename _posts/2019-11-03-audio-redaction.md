@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "KSE and Audio Redaction Algorithm"
-date:   2018-08-21
+date:   2019-11-03
 excerpt: "Share my knowledge, skills and experience via examples from my work."
 project: true
 tag: [Personal]
@@ -55,4 +55,11 @@ Automactic redaction of "noice" data during audio processing prvents users of th
 
 ### A Callback/Secduled Telephony Conversation
 ![scheduled](./../assets/img/scheduled.png)
+
+### A Directed Acyclic Forest Solution
+
+![dag](./assets/../../assets/img/algorithm.png)
+
+### FFMPEG Command Line
+## -filter_complex ""channelsplit[l][rpre];[rpre] volume=enable='between(t,{StartSeconds},{EndSeconds})':volume=0 [r];[l][r]amerge"" -acodec libopus
 
