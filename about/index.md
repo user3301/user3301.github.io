@@ -9,13 +9,8 @@ comments: false
 <center> <b>Hodor.</b> Because "Hello world" is too mainstream.</center>
 
 ## About User3301
-Traditional Chineses software developer possesses significant knowledge, technical aptitude and hands-on experience with  `Acupuncture`, `Dumpling making`, `Astrology` and last but not least - `Computer Science`. 
-I always consult the FengShui charts to make sure the day is a good day to deploy staging build to production environment, so yeah, the code is all in good hands.
 
-My Zodiac sign is Libra, people born under the sign of Libra are peaceful, fair, and they hate being alone. So I can be a good team player.
- 
-
-
-
-
-
+山货批发专业户，村先进个人奖获得者。
+喜欢自学英语，定期参加屯子里英语角活动。
+承接房屋浴室维修改建，防水三级证书，保证浴室通刷无漏水死角。
+地中海脱发 + 中心型肥胖。二婚。
