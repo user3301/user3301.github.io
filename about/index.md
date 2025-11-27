@@ -6,7 +6,7 @@ date: 2017-06-11
 comments: false
 ---
 
-<center> <b>Hodor.</b> Because "Hello world" is too mainstream.</center>
+<center> :ggVGdwq.</center>
 
 ## About User3301
 
