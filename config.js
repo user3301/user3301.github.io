@@ -106,8 +106,8 @@ const CONFIG = {
     " NixOS Enthusiast",
     " TUI-First Developer",
     "󰌌 Split-Keyboard Aficionado",
+    " Linux Ricer",
     "󱄅 Declarative OS Purist",
-    " Modal Editing Evangelist",
     "󰌽 Always-Improving Engineer"
   ]
 };
