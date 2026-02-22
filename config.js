@@ -13,7 +13,9 @@ const CONFIG = {
 
   // Header Summary
   SUMMARY: [
-    "Senior Software Engineer with 10+ years of building and refining systems — nine of those spent hand‑crafting every line before teaming up with AI as my new coding sidekick. I write clean, high‑signal code, live inside Neovim, and wield a Corne split keyboard like a tiny ergonomic spellbook. These days, I specialise in turning chaotic codebases into elegant, declarative, well‑behaved systems — ideally from a TUI, with custom keybindings, and a keyboard I soldered myself"
+    "Senior Software Engineer with 10+ years of building and refining systems — 9 of those spent hand‑crafting every line before teaming up with AI as my new coding sidekick.",
+    "I write clean, high‑signal code, live inside Neovim, and wield a Corne split keyboard like a tiny ergonomic spellbook.",
+    "These days, I specialise in turning chaotic codebases into elegant, declarative, well‑behaved systems — ideally from a TUI, with custom keybindings, and a keyboard I soldered myself."
   ],
 
   // Photo (leave empty for placeholder, or provide path like "assets/img/photo.jpg")
