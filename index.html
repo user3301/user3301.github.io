@@ -12,12 +12,80 @@
         }
 
         body {
-            background-color: #1e1e1e;
-            color: #d4d4d4;
+            background-color: #1d2021;
+            color: #ddc7a1;
             font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
             font-size: 14px;
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Light theme - Catppuccin Latte */
+        body.light-theme {
+            background-color: #eff1f5;
+            color: #4c4f69;
+        }
+
+        body.light-theme .comment {
+            color: #9ca0b0;
+        }
+
+        body.light-theme .keyword {
+            color: #d20f39;
+        }
+
+        body.light-theme .class-name {
+            color: #fe640b;
+        }
+
+        body.light-theme .string {
+            color: #40a02b;
+        }
+
+        body.light-theme .number {
+            color: #df8e1d;
+        }
+
+        body.light-theme .property {
+            color: #1e66f5;
+        }
+
+        body.light-theme .boolean {
+            color: #8839ef;
+        }
+
+        body.light-theme .bracket {
+            color: #04a5e5;
+        }
+
+        body.light-theme .profile-photo {
+            background-color: #e6e9ef;
+            border-color: #04a5e5;
+        }
+
+        body.light-theme .logo {
+            color: #9ca0b0;
+        }
+
+        body.light-theme a {
+            color: #1e66f5;
+        }
+
+        body.light-theme a:hover {
+            color: #04a5e5;
+        }
+
+        body.light-theme ::-webkit-scrollbar-track {
+            background: #e6e9ef;
+        }
+
+        body.light-theme ::-webkit-scrollbar-thumb {
+            background: #bcc0cc;
+        }
+
+        body.light-theme ::-webkit-scrollbar-thumb:hover {
+            background: #acb0be;
         }
 
         .container {
@@ -40,15 +108,15 @@
             width: 100%;
             max-width: 250px;
             height: auto;
-            border: 3px solid #569cd6;
+            border: 3px solid #7daea3;
             border-radius: 8px;
             margin-bottom: 20px;
-            background-color: #2d2d2d;
+            background-color: #282828;
             aspect-ratio: 1/1;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #858585;
+            color: #928374;
             font-size: 12px;
         }
 
@@ -95,31 +163,31 @@
         }
 
         .comment {
-            color: #6a9955;
+            color: #928374;
         }
 
         .keyword {
-            color: #569cd6;
+            color: #ea6962;
         }
 
         .class-name {
-            color: #4ec9b0;
+            color: #e78a4e;
         }
 
         .string {
-            color: #ce9178;
+            color: #a9b665;
         }
 
         .number {
-            color: #b5cea8;
+            color: #d8a657;
         }
 
         .property {
-            color: #9cdcfe;
+            color: #7daea3;
         }
 
         .boolean {
-            color: #569cd6;
+            color: #d3869b;
         }
 
         .section {
@@ -127,7 +195,7 @@
         }
 
         .section-title {
-            color: #4ec9b0;
+            color: #e78a4e;
             font-size: 18px;
             margin-bottom: 15px;
             text-transform: uppercase;
@@ -139,16 +207,17 @@
         .indent-3 { padding-left: 60px; }
 
         .bracket {
-            color: #ffd700;
+            color: #d8a657;
         }
 
         a {
-            color: #9cdcfe;
+            color: #7daea3;
             text-decoration: none;
         }
 
         a:hover {
             text-decoration: underline;
+            color: #89b482;
         }
 
         .header {
@@ -156,7 +225,7 @@
         }
 
         .logo {
-            color: #858585;
+            color: #928374;
             font-size: 12px;
             margin-bottom: 20px;
         }
@@ -184,20 +253,62 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #1e1e1e;
+            background: #1d2021;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #424242;
+            background: #3c3836;
             border-radius: 6px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #4e4e4e;
+            background: #504945;
+        }
+
+        /* Theme toggle button */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #282828;
+            border: 2px solid #7daea3;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border-color: #89b482;
+        }
+
+        body.light-theme .theme-toggle {
+            background-color: #e6e9ef;
+            border-color: #04a5e5;
+            box-shadow: 0 2px 8px rgba(76, 79, 105, 0.1);
+        }
+
+        body.light-theme .theme-toggle:hover {
+            border-color: #1e66f5;
+            box-shadow: 0 4px 12px rgba(76, 79, 105, 0.2);
         }
     </style>
 </head>
 <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span id="theme-icon">🌙</span>
+    </button>
+
     <div class="container">
         <!-- Left Sidebar -->
         <div class="sidebar">
@@ -517,6 +628,32 @@
                 `;
             }
         }
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        // Check for saved theme preference or default to dark
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+
+        if (currentTheme === 'light') {
+            body.classList.add('light-theme');
+            themeIcon.textContent = '☀️';
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+
+            if (body.classList.contains('light-theme')) {
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
     </script>
 </body>
 </html>
