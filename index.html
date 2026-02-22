@@ -1,5 +1,522 @@
----
-layout: home
-title: Home
-comments: false
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Loading...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+        }
+
+        /* Left sidebar with photo */
+        .sidebar {
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+        }
+
+        .profile-photo {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border: 3px solid #569cd6;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #2d2d2d;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #858585;
+            font-size: 12px;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .sidebar-info {
+            margin-top: 20px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-section h3 {
+            color: #4ec9b0;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .sidebar-section ul {
+            list-style: none;
+        }
+
+        .sidebar-section li {
+            color: #9cdcfe;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+
+        /* Main content area */
+        .content {
+            padding-left: 20px;
+        }
+
+        .code-line {
+            margin: 4px 0;
+        }
+
+        .comment {
+            color: #6a9955;
+        }
+
+        .keyword {
+            color: #569cd6;
+        }
+
+        .class-name {
+            color: #4ec9b0;
+        }
+
+        .string {
+            color: #ce9178;
+        }
+
+        .number {
+            color: #b5cea8;
+        }
+
+        .property {
+            color: #9cdcfe;
+        }
+
+        .boolean {
+            color: #569cd6;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #4ec9b0;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .indent-1 { padding-left: 20px; }
+        .indent-2 { padding-left: 40px; }
+        .indent-3 { padding-left: 60px; }
+
+        .bracket {
+            color: #ffd700;
+        }
+
+        a {
+            color: #9cdcfe;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            color: #858585;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+
+            .content {
+                padding-left: 0;
+            }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #424242;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4e4e4e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="logo">&lt;img&gt;</div>
+            <div class="profile-photo" id="profile-photo">
+                [Your Photo Here]
+            </div>
+            <div class="logo">&lt;\img&gt;</div>
+
+            <div class="sidebar-info">
+                <!-- Platforms -->
+                <div class="sidebar-section">
+                    <h3><span class="keyword">public enum</span> PLATFORMS()</h3>
+                    <div class="bracket">{</div>
+                    <ul class="indent-1" id="platforms-list"></ul>
+                    <div class="bracket">}</div>
+                </div>
+
+                <!-- Languages -->
+                <div class="sidebar-section">
+                    <h3><span class="keyword">public enum</span> LANGUAGES()</h3>
+                    <div class="bracket">{</div>
+                    <ul class="indent-1" id="languages-list"></ul>
+                    <div class="bracket">}</div>
+                </div>
+
+                <!-- Software -->
+                <div class="sidebar-section">
+                    <h3><span class="keyword">public enum</span> SOFTWARE()</h3>
+                    <div class="bracket">{</div>
+                    <ul class="indent-1" id="software-list"></ul>
+                    <div class="bracket">}</div>
+                </div>
+
+                <!-- Media Links -->
+                <div class="sidebar-section">
+                    <h3><span class="keyword">public enum</span> MEDIA()</h3>
+                    <div class="bracket">{</div>
+                    <ul class="indent-1" id="media-list"></ul>
+                    <div class="bracket">}</div>
+                </div>
+
+                <!-- Spoken Languages -->
+                <div class="sidebar-section">
+                    <h3><span class="keyword">public enum</span> SPOKEN_LANGUAGES()</h3>
+                    <div class="bracket">{</div>
+                    <ul class="indent-1" id="spoken-languages-list"></ul>
+                    <div class="bracket">}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Summary Header -->
+            <div class="header">
+                <div class="code-line comment">/// &lt;summary&gt;</div>
+                <div id="summary-content"></div>
+                <div class="code-line comment">/// &lt;\summary&gt;</div>
+            </div>
+
+            <!-- Information Section -->
+            <div class="section">
+                <div class="code-line">
+                    <span class="keyword">public class</span> <span class="class-name">INFORMATION</span>
+                </div>
+                <div class="code-line"><span class="bracket">{</span></div>
+                <div id="information-content"></div>
+                <div class="code-line"><span class="bracket">}</span></div>
+            </div>
+
+            <!-- Experiences Section -->
+            <div class="section">
+                <div class="code-line">
+                    <span class="keyword">public static class</span> <span class="class-name">EXPERIENCES</span>
+                </div>
+                <div class="code-line"><span class="bracket">{</span></div>
+                <div id="experiences-content"></div>
+                <div class="code-line"><span class="bracket">}</span></div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="section">
+                <div class="code-line">
+                    <span class="keyword">public partial class</span> <span class="class-name">EDUCATION</span> : <span class="class-name">HigherEducation</span>
+                </div>
+                <div class="code-line"><span class="bracket">{</span></div>
+                <div id="education-content"></div>
+                <div class="code-line"><span class="bracket">}</span></div>
+            </div>
+
+            <!-- Profile Section -->
+            <div class="section">
+                <div class="code-line">
+                    <span class="keyword">public enum</span> <span class="class-name">PROFILE</span>()
+                </div>
+                <div class="code-line"><span class="bracket">{</span></div>
+                <div id="profile-content"></div>
+                <div class="code-line"><span class="bracket">}</span></div>
+            </div>
+
+            <!-- Footer -->
+            <div class="section">
+                <div class="code-line comment" id="footer-link">
+                    /// Made with Claude Code
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Configuration -->
+    <script src="config.js"></script>
+
+    <!-- Populate Content from Config -->
+    <script>
+        // Update page title
+        document.getElementById('page-title').textContent = `${CONFIG.INFORMATION.NAME} - ${CONFIG.INFORMATION.TITLE}`;
+
+        // Update profile photo
+        const photoContainer = document.getElementById('profile-photo');
+        if (CONFIG.PHOTO) {
+            photoContainer.innerHTML = `<img src="${CONFIG.PHOTO}" alt="${CONFIG.INFORMATION.NAME}">`;
+        }
+
+        // Populate Platforms
+        const platformsList = document.getElementById('platforms-list');
+        CONFIG.PLATFORMS.forEach(platform => {
+            platformsList.innerHTML += `<li>${platform},</li>`;
+        });
+
+        // Populate Programming Languages
+        const languagesList = document.getElementById('languages-list');
+        CONFIG.LANGUAGES.forEach(lang => {
+            languagesList.innerHTML += `<li>${lang},</li>`;
+        });
+
+        // Populate Software
+        const softwareList = document.getElementById('software-list');
+        CONFIG.SOFTWARE.forEach(software => {
+            softwareList.innerHTML += `<li>${software},</li>`;
+        });
+
+        // Populate Media Links
+        const mediaList = document.getElementById('media-list');
+        CONFIG.MEDIA.forEach(media => {
+            mediaList.innerHTML += `<li><a href="${media.url}" target="_blank">${media.name}</a></li>`;
+        });
+
+        // Populate Spoken Languages
+        const spokenLanguagesList = document.getElementById('spoken-languages-list');
+        CONFIG.SPOKEN_LANGUAGES.forEach(langue => {
+            spokenLanguagesList.innerHTML += `<li><span class="comment">// ${langue.comment}</span></li>`;
+            spokenLanguagesList.innerHTML += `<li>${langue.language} = <span class="string">${langue.level}</span>,</li>`;
+        });
+
+        // Populate Summary
+        const summaryContent = document.getElementById('summary-content');
+        CONFIG.SUMMARY.forEach(line => {
+            summaryContent.innerHTML += `<div class="code-line comment">/// ${line}</div>`;
+        });
+
+        // Populate Information
+        const informationContent = document.getElementById('information-content');
+        informationContent.innerHTML = `
+            <div class="code-line indent-1">
+                <span class="keyword">public string</span> <span class="property">NAME</span> = <span class="string">"${CONFIG.INFORMATION.NAME}"</span>;
+            </div>
+            <div class="code-line indent-1">
+                <span class="keyword">public string</span> <span class="property">TITLE</span> = <span class="string">"${CONFIG.INFORMATION.TITLE}"</span>;
+            </div>
+            <div class="code-line indent-1">
+                <span class="keyword">public string</span> <span class="property">EMAIL</span> = <span class="string">"${CONFIG.INFORMATION.EMAIL}"</span>;
+            </div>
+            <div class="code-line indent-1">
+                <span class="keyword">public string[]</span> <span class="property">LOCATION</span> = <span class="bracket">{</span>${CONFIG.INFORMATION.LOCATION.map(loc => `<span class="string">"${loc}"</span>`).join(', ')}<span class="bracket">}</span>;
+            </div>
+            <div class="code-line indent-1">
+                <span class="keyword">public bool</span> <span class="property">OPEN_TO_OPPORTUNITIES</span> = <span class="boolean">${CONFIG.INFORMATION.OPEN_TO_OPPORTUNITIES}</span>;
+            </div>
+        `;
+
+        // Populate Education
+        const educationContent = document.getElementById('education-content');
+        CONFIG.EDUCATION.forEach(formation => {
+            educationContent.innerHTML += `
+                <div class="code-line indent-1">
+                    <span class="keyword">private void</span> <span class="property">${formation.title}</span>()
+                </div>
+                <div class="code-line indent-1"><span class="bracket">{</span></div>
+            `;
+
+            if (formation.niveau) {
+                educationContent.innerHTML += `
+                    <div class="code-line indent-2">
+                        <span class="keyword">var</span> <span class="property">_Degree</span> = <span class="class-name">${formation.niveau}</span>;
+                    </div>
+                `;
+            }
+
+            if (formation.institution) {
+                educationContent.innerHTML += `
+                    <div class="code-line indent-2">
+                        <span class="keyword">var</span> <span class="property">_Institution</span> = <span class="string">"${formation.institution}"</span>;
+                    </div>
+                `;
+            }
+
+            if (formation.type) {
+                educationContent.innerHTML += `
+                    <div class="code-line indent-2">
+                        <span class="keyword">var</span> <span class="property">_Type</span> = <span class="class-name">${formation.type}</span>;
+                    </div>
+                `;
+            }
+
+            if (formation.focus) {
+                educationContent.innerHTML += `
+                    <div class="code-line indent-2">
+                        <span class="keyword">var</span> <span class="property">_Focus</span> = <span class="string">"${formation.focus}"</span>;
+                    </div>
+                `;
+            }
+
+            if (formation.platforms) {
+                educationContent.innerHTML += `
+                    <div class="code-line indent-2">
+                        <span class="keyword">var</span> <span class="property">_Platforms</span> = <span class="bracket">{</span>${formation.platforms.map(p => `<span class="string">"${p}"</span>`).join(', ')}<span class="bracket">}</span>;
+                    </div>
+                `;
+            }
+
+            educationContent.innerHTML += `
+                <div class="code-line indent-1"><span class="bracket">}</span></div>
+            `;
+        });
+
+        // Populate Experiences
+        const experiencesContent = document.getElementById('experiences-content');
+        CONFIG.EXPERIENCES.forEach(exp => {
+            experiencesContent.innerHTML += `
+                <div class="code-line indent-1">
+                    <span class="keyword">public void</span> <span class="property">${exp.title}</span>()
+                </div>
+                <div class="code-line indent-1"><span class="bracket">{</span></div>
+            `;
+
+            if (exp.role) {
+                experiencesContent.innerHTML += `
+                    <div class="code-line indent-2">
+                        <span class="keyword">var</span> <span class="property">_Role</span> = <span class="string">"${exp.role}"</span>;
+                    </div>
+                `;
+            }
+
+            if (exp.startDate && exp.endDate) {
+                experiencesContent.innerHTML += `
+                    <div class="code-line indent-2">
+                        <span class="keyword">var</span> <span class="property">_Duration</span> = <span class="string">"${exp.startDate} - ${exp.endDate}"</span>;
+                    </div>
+                `;
+            }
+
+            if (exp.technologies) {
+                experiencesContent.innerHTML += `
+                    <div class="code-line indent-2">
+                        <span class="keyword">var</span> <span class="property">_Technologies</span> = <span class="bracket">{</span>${exp.technologies.map(t => `<span class="string">"${t}"</span>`).join(', ')}<span class="bracket">}</span>;
+                    </div>
+                `;
+            }
+
+            if (exp.description) {
+                experiencesContent.innerHTML += `
+                    <div class="code-line indent-2">
+                        <span class="keyword">var</span> <span class="property">_Description</span> = <span class="string">"${exp.description}"</span>;
+                    </div>
+                `;
+            }
+
+            if (exp.focus) {
+                experiencesContent.innerHTML += `
+                    <div class="code-line indent-2">
+                        <span class="keyword">var</span> <span class="property">_Focus</span> = <span class="string">"${exp.focus}"</span>;
+                    </div>
+                `;
+            }
+
+            if (exp.skills) {
+                experiencesContent.innerHTML += `
+                    <div class="code-line indent-2">
+                        <span class="keyword">var</span> <span class="property">_Skills</span> = <span class="bracket">{</span>${exp.skills.map(s => `<span class="string">"${s}"</span>`).join(', ')}<span class="bracket">}</span>;
+                    </div>
+                `;
+            }
+
+            experiencesContent.innerHTML += `
+                <div class="code-line indent-1"><span class="bracket">}</span></div>
+            `;
+        });
+
+        // Populate Profile
+        const profileContent = document.getElementById('profile-content');
+        CONFIG.PROFILE.forEach((trait, index) => {
+            const comma = index < CONFIG.PROFILE.length - 1 ? ',' : '';
+            profileContent.innerHTML += `
+                <div class="code-line indent-1">
+                    <span class="property">${trait}</span>${comma}
+                </div>
+            `;
+        });
+
+        // Update footer link
+        if (CONFIG.MEDIA.length > 0) {
+            const githubLink = CONFIG.MEDIA.find(m => m.name.toLowerCase() === 'github');
+            if (githubLink) {
+                document.getElementById('footer-link').innerHTML = `
+                    /// Made with Claude Code - <a href="${githubLink.url}" target="_blank">${githubLink.url.replace('https://', '')}</a>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,3 +1,5 @@
-# uer3301's personal Page
+# User3301
 
-[Portal](https://user3301.github.io)
+Personal website: [user3301.github.io](https://user3301.github.io)
+
+A code-styled single-page portfolio.
