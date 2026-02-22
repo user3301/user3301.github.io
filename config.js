@@ -30,7 +30,7 @@ const CONFIG = {
   // Programming Languages
   LANGUAGES: [
     "Golang, C#, Java",
-    "Python, Bash, LUA",
+    "Python, Bash, Lua",
     "Nix, Vimscript"
   ],
 
@@ -78,7 +78,7 @@ const CONFIG = {
       role: "Senior Software Engineer",
       startDate: "December 2019",
       endDate: "Present",
-      technologies: ["Golang", "gRPC", "Kubernetes", "GCP", "Skaffold"],
+      technologies: ["Golang", "gRPC", "Kubernetes", "GCP", "Skaffold", "Helm", "GNU Make"],
       description: "Build and maintain secure, high-performance authentication service for ANZ Plus App"
     },
     {
@@ -86,7 +86,7 @@ const CONFIG = {
       role: "Software Engineer",
       startDate: "November 2017",
       endDate: "December 2019",
-      technologies: ["C#", ".NET Core", "Python with Jupyter Notebook", "Text-To-Speech", "SSML", "HangfireIO", "Microsoft Azure", "Cosmos DB"],
+      technologies: ["C# (.NET Core)", "Python", "Jupyter Notebook", "HangfireIO", "Text-To-Speech", "SSML", "Microsoft Azure", "CosmosDB", "Microsoft Watson"],
       description: "Developed and maintained backend Text-To-Speech engine to support large-scale speech analytics pipelines. Conducted R&D prototyping to explore innovative approaches for speech to text processing and sentiment analysis"
     },
     {
@@ -95,16 +95,18 @@ const CONFIG = {
       startDate: "April 2016",
       endDate: "October 2017",
       technologies: ["Java", "Spring Boot", "MySQL", "MyBatis", "Maven", "AWS"],
-      description: ""
+      description: "Developed the backend workflow for the Customer Relationship Management service"
     }
   ],
 
   // Profile traits
   PROFILE: [
-    "Neovim Power-User",
-    "NixOS Enthusiast",
-    "Declarative OS Purist",
-    "Modal Editing Evangelist",
-    "Always-Improving Engineer"
+    " Neovim Power-User",
+    " NixOS Enthusiast",
+    " TUI-First Developer",
+    "󰌌 Split-Keyboard Aficionado",
+    "󱄅 Declarative OS Purist",
+    " Modal Editing Evangelist",
+    "󰌽 Always-Improving Engineer"
   ]
 };
