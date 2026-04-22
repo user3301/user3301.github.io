@@ -78,9 +78,9 @@ const CONFIG = {
       title: "ANZBank",
       role: "Senior Software Engineer",
       startDate: "December 2019",
-      endDate: "Present",
+      endDate: "April 2026",
       technologies: ["Golang", "gRPC", "Kubernetes", "GCP", "Skaffold", "Helm", "GNU Make"],
-      description: "Build and maintain secure, high-performance authentication service for ANZ Plus App"
+      description: "Build and maintain secure, high-performance authentication & authorization service for ANZ Plus App"
     },
     {
       title: "CallJourneyCI",
