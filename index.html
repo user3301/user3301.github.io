@@ -3,657 +3,897 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Loading...</title>
+    <title>user3301</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: #1d2021;
-            color: #ddc7a1;
-            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background-color: #111111;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 14px;
-            line-height: 1.6;
-            overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            line-height: 1.5;
         }
 
-        /* Light theme - Catppuccin Latte */
-        body.light-theme {
-            background-color: #eff1f5;
-            color: #4c4f69;
-        }
-
-        body.light-theme .comment {
-            color: #9ca0b0;
-        }
-
-        body.light-theme .keyword {
-            color: #d20f39;
-        }
-
-        body.light-theme .class-name {
-            color: #fe640b;
-        }
-
-        body.light-theme .string {
-            color: #40a02b;
-        }
-
-        body.light-theme .number {
-            color: #df8e1d;
-        }
-
-        body.light-theme .property {
-            color: #1e66f5;
-        }
-
-        body.light-theme .boolean {
-            color: #8839ef;
-        }
-
-        body.light-theme .bracket {
-            color: #04a5e5;
-        }
-
-        body.light-theme .profile-photo {
-            background-color: #e6e9ef;
-            border-color: #04a5e5;
-        }
-
-        body.light-theme .logo {
-            color: #9ca0b0;
-        }
-
-        body.light-theme a {
-            color: #1e66f5;
-        }
-
-        body.light-theme a:hover {
-            color: #04a5e5;
-        }
-
-        body.light-theme ::-webkit-scrollbar-track {
-            background: #e6e9ef;
-        }
-
-        body.light-theme ::-webkit-scrollbar-thumb {
-            background: #bcc0cc;
-        }
-
-        body.light-theme ::-webkit-scrollbar-thumb:hover {
-            background: #acb0be;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 40px;
-        }
-
-        /* Left sidebar with photo */
-        .sidebar {
-            position: sticky;
-            top: 40px;
-            height: fit-content;
-        }
-
-        .profile-photo {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
-            border: 3px solid #7daea3;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            background-color: #282828;
-            aspect-ratio: 1/1;
+        /* ── NAVBAR ──────────────────────────────────────────── */
+        .navbar {
+            background: #000000;
+            padding: 10px 24px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: #928374;
-            font-size: 12px;
-        }
-
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .sidebar-info {
-            margin-top: 20px;
-        }
-
-        .sidebar-section {
-            margin-bottom: 25px;
-        }
-
-        .sidebar-section h3 {
-            color: #4ec9b0;
-            font-size: 12px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            font-weight: normal;
-        }
-
-        .sidebar-section ul {
-            list-style: none;
-        }
-
-        .sidebar-section li {
-            color: #9cdcfe;
-            margin-bottom: 5px;
-            font-size: 13px;
-        }
-
-        /* Main content area */
-        .content {
-            padding-left: 20px;
-        }
-
-        .code-line {
-            margin: 4px 0;
-        }
-
-        .comment {
-            color: #928374;
-        }
-
-        .keyword {
-            color: #ea6962;
-        }
-
-        .class-name {
-            color: #e78a4e;
-        }
-
-        .string {
-            color: #a9b665;
-        }
-
-        .number {
-            color: #d8a657;
-        }
-
-        .property {
-            color: #7daea3;
-        }
-
-        .boolean {
-            color: #d3869b;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            color: #e78a4e;
-            font-size: 18px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .indent-1 { padding-left: 20px; }
-        .indent-2 { padding-left: 40px; }
-        .indent-3 { padding-left: 60px; }
-
-        .bracket {
-            color: #d8a657;
-        }
-
-        a {
-            color: #7daea3;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            color: #89b482;
-        }
-
-        .header {
-            margin-bottom: 30px;
+            gap: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            border-bottom: 1px solid #222;
         }
 
         .logo {
-            color: #928374;
+            font-size: 22px;
+            font-weight: 900;
+            white-space: nowrap;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+        .logo .logo-white { color: #ffffff; }
+        .logo .logo-box {
+            background: #FF9000;
+            color: #000000;
+            padding: 1px 7px;
+            border-radius: 4px;
+        }
+
+        .nav-actions {
+            margin-left: auto;
+            display: flex;
+            gap: 8px;
+        }
+        .nav-btn {
+            padding: 7px 18px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+        .nav-btn.outline {
+            background: transparent;
+            border: 1px solid #555;
+            color: #fff;
+        }
+        .nav-btn.outline:hover { border-color: #FF9000; color: #FF9000; }
+        .nav-btn.fill {
+            background: #FF9000;
+            border: 1px solid #FF9000;
+            color: #000;
+        }
+        .nav-btn.fill:hover { background: #ffaa33; border-color: #ffaa33; }
+
+        /* ── BANNER ──────────────────────────────────────────── */
+        .banner {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(160deg, #1a0a00 0%, #2d1600 40%, #1a0a00 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -55deg,
+                transparent,
+                transparent 40px,
+                rgba(255,144,0,0.04) 40px,
+                rgba(255,144,0,0.04) 41px
+            );
+        }
+        .banner-glow {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 120px;
+            background: radial-gradient(ellipse, rgba(255,144,0,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* ── PROFILE SECTION ─────────────────────────────────── */
+        .profile-section {
+            background: #1b1b1b;
+            padding: 0 30px 20px;
+            border-bottom: 2px solid #222;
+        }
+
+        .profile-top {
+            display: flex;
+            align-items: flex-end;
+            gap: 22px;
+            margin-top: 0;
+            margin-bottom: 16px;
+            padding-top: 12px;
+        }
+
+        .avatar-wrap {
+            position: relative;
+            flex-shrink: 0;
+            margin-top: -70px;
+        }
+        .avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #FF9000;
+            object-fit: cover;
+            display: block;
+            background: #2a2a2a;
+        }
+        .avatar-fallback {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #FF9000;
+            background: #2a2a2a;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 52px;
+            color: #FF9000;
+        }
+        .status-dot {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #4caf50;
+            border: 3px solid #1b1b1b;
+        }
+
+        .profile-meta {
+            flex: 1;
+            padding-bottom: 4px;
+            min-width: 0;
+        }
+        .profile-name-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+        .profile-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+        .badge {
+            background: #FF9000;
+            color: #000;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 9px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .badge.open {
+            background: #4caf50;
+            color: #fff;
+        }
+        .profile-title {
+            color: #aaa;
+            font-size: 15px;
+            margin-bottom: 3px;
+            white-space: nowrap;
+        }
+        .profile-location {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 14px;
+        }
+
+        .action-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .btn-primary {
+            padding: 9px 26px;
+            background: #FF9000;
+            border: none;
+            border-radius: 4px;
+            color: #000;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.15s;
+        }
+        .btn-primary:hover { background: #ffaa33; }
+        .btn-secondary {
+            padding: 9px 20px;
+            background: transparent;
+            border: 1px solid #555;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s;
+        }
+        .btn-secondary:hover { border-color: #FF9000; color: #FF9000; }
+
+        /* ── STATS ───────────────────────────────────────────── */
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            padding-top: 16px;
+            border-top: 1px solid #2a2a2a;
+        }
+        .stat {
+            padding: 6px 30px 6px 0;
+            margin-right: 30px;
+            border-right: 1px solid #2a2a2a;
+        }
+        .stat:last-child { border-right: none; }
+        .stat-val {
+            font-size: 20px;
+            font-weight: bold;
+            color: #FF9000;
+        }
+        .stat-lbl {
+            font-size: 11px;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 1px;
+        }
+
+
+        /* ── ABOUT ───────────────────────────────────────────── */
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 290px;
+            gap: 22px;
+        }
+        .card {
+            background: #1e1e1e;
+            border: 1px solid #2a2a2a;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        .card + .card { margin-top: 16px; }
+        .card-title {
             font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #FF9000;
+            margin-bottom: 12px;
+        }
+        .bio-text {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.75;
+        }
+        .bio-text p + p { margin-top: 10px; }
+        .info-list { list-style: none; }
+        .info-list li {
+            color: #ccc;
+            font-size: 13px;
+            padding: 6px 0;
+            border-bottom: 1px solid #252525;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-list li:last-child { border-bottom: none; }
+        .info-list a { color: #FF9000; text-decoration: none; }
+        .info-list a:hover { text-decoration: underline; }
+        .tag-cloud { display: flex; flex-direction: column; gap: 6px; }
+        .tag {
+            background: #252525;
+            border: 1px solid #333;
+            color: #ccc;
+            padding: 4px 11px;
+            border-radius: 3px;
+            font-size: 12px;
+            transition: all 0.15s;
+            cursor: default;
+        }
+        .tag:hover { border-color: #FF9000; color: #FF9000; }
+
+        /* ── SECTION HEADER ──────────────────────────────────── */
+        .section-hdr {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
             margin-bottom: 20px;
         }
+        .section-hdr h2 { font-size: 18px; color: #fff; }
+        .section-hdr .count { color: #666; font-size: 13px; }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .sidebar {
-                position: relative;
-                top: 0;
-            }
-
-            .content {
-                padding-left: 0;
-            }
+        /* ── EXPERIENCE CARDS (video-thumbnail style) ────────── */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 20px;
         }
-
-        /* Scrollbar styling */
-        ::-webkit-scrollbar {
-            width: 12px;
+        .exp-card {
+            background: #1e1e1e;
+            border: 1px solid #2a2a2a;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.15s;
         }
-
-        ::-webkit-scrollbar-track {
-            background: #1d2021;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #3c3836;
-            border-radius: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #504945;
-        }
-
-        /* Theme toggle button */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #282828;
-            border: 2px solid #7daea3;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
+        .exp-card:hover { border-color: #FF9000; transform: translateY(-3px); }
+        .exp-thumb {
+            height: 155px;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .exp-thumb::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 20px,
+                rgba(255,144,0,0.04) 20px,
+                rgba(255,144,0,0.04) 21px
+            );
+        }
+        .exp-co {
+            font-size: 30px;
+            font-weight: 900;
+            color: #FF9000;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+            z-index: 1;
+            text-align: center;
+            padding: 0 10px;
+        }
+        .thumb-badge {
+            position: absolute;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 9px;
+            border-radius: 2px;
+        }
+        .thumb-badge.top-left {
+            top: 8px;
+            left: 8px;
+            background: #FF9000;
+            color: #000;
+            text-transform: uppercase;
+        }
+        .thumb-badge.bot-right {
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.85);
+            color: #fff;
+        }
+        .exp-body { padding: 14px 16px; }
+        .exp-company { font-size: 15px; font-weight: bold; color: #fff; margin-bottom: 3px; }
+        .exp-meta { color: #777; font-size: 12px; margin-bottom: 9px; }
+        .exp-desc { color: #aaa; font-size: 13px; line-height: 1.55; margin-bottom: 12px; }
+        .exp-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+        .exp-tag {
+            background: #252525;
+            border: 1px solid #333;
+            color: #bbb;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 2px;
         }
 
-        .theme-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            border-color: #89b482;
+        /* ── EDUCATION CARDS ─────────────────────────────────── */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .edu-card {
+            background: #1e1e1e;
+            border: 1px solid #2a2a2a;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .edu-card:hover { border-color: #FF9000; }
+        .edu-thumb {
+            padding: 28px 20px;
+            background: linear-gradient(140deg, #2a1600, #1a0c00);
+            text-align: center;
+        }
+        .edu-icon { font-size: 40px; margin-bottom: 8px; }
+        .edu-level { font-size: 17px; font-weight: bold; color: #fff; }
+        .edu-body { padding: 16px; }
+        .edu-inst { font-size: 15px; font-weight: bold; color: #fff; margin-bottom: 4px; }
+        .edu-field { color: #888; font-size: 13px; }
+
+        /* ── SKILLS ──────────────────────────────────────────── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 18px;
+        }
+        .skill-card {
+            background: #1e1e1e;
+            border: 1px solid #2a2a2a;
+            border-radius: 5px;
+            padding: 18px;
+        }
+        .skill-title {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #FF9000;
+            margin-bottom: 12px;
+        }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+        .skill-tag {
+            background: #252525;
+            border: 1px solid #333;
+            color: #ddd;
+            padding: 5px 13px;
+            border-radius: 3px;
+            font-size: 13px;
+            transition: all 0.15s;
+            cursor: default;
+        }
+        .skill-tag:hover { border-color: #FF9000; color: #FF9000; }
+
+        /* ── PAGE LAYOUT ─────────────────────────────────────── */
+        .page-layout {
+            max-width: 100%;
+            margin: 0;
+            padding: 28px 30px;
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 30px;
+            align-items: start;
         }
 
-        body.light-theme .theme-toggle {
-            background-color: #e6e9ef;
-            border-color: #04a5e5;
-            box-shadow: 0 2px 8px rgba(76, 79, 105, 0.1);
+        /* ── SIDE NAV ────────────────────────────────────────── */
+        .side-nav {
+            position: sticky;
+            top: 80px;
+        }
+        .side-nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            color: #777;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-left: 3px solid transparent;
+            transition: all 0.15s;
+            margin-bottom: 2px;
+        }
+        .side-nav a:hover { color: #ddd; border-left-color: #555; }
+        .side-nav a.active { color: #FF9000; border-left-color: #FF9000; }
+        .side-nav a .nav-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+            flex-shrink: 0;
         }
 
-        body.light-theme .theme-toggle:hover {
-            border-color: #1e66f5;
-            box-shadow: 0 4px 12px rgba(76, 79, 105, 0.2);
+        /* ── SECTIONS ────────────────────────────────────────── */
+        .page-section {
+            margin-bottom: 50px;
+            scroll-margin-top: 80px;
+        }
+        .page-section:last-child { margin-bottom: 0; }
+
+        /* ── FOOTER ──────────────────────────────────────────── */
+        footer {
+            background: #000;
+            border-top: 1px solid #222;
+            padding: 22px 30px;
+            text-align: center;
+            color: #444;
+            font-size: 12px;
+            margin-top: 40px;
+        }
+        footer a { color: #FF9000; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* ── SCROLLBAR ───────────────────────────────────────── */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF9000; }
+
+        /* ── RESPONSIVE ──────────────────────────────────────── */
+        @media (max-width: 900px) {
+            .page-layout { grid-template-columns: 1fr; padding: 20px 16px; }
+            .side-nav { display: flex; flex-wrap: wrap; gap: 4px; position: static; border-bottom: 1px solid #222; padding-bottom: 12px; margin-bottom: 8px; }
+            .side-nav a { border-left: none; border-bottom: 3px solid transparent; padding: 6px 10px; margin-bottom: 0; }
+            .side-nav a.active { border-bottom-color: #FF9000; border-left-color: transparent; }
+            .about-layout { grid-template-columns: 1fr; }
+            .profile-top { flex-direction: column; align-items: flex-start; padding-top: 0; }
+            .avatar-wrap { margin-top: -50px; }
+            .stats-row { gap: 16px; }
+            .stat { border-right: none; margin-right: 0; padding-right: 0; }
+            .profile-section { padding: 0 16px 16px; }
         }
     </style>
 </head>
 <body>
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-        <span id="theme-icon">🌙</span>
-    </button>
 
-    <div class="container">
-        <!-- Left Sidebar -->
-        <div class="sidebar">
-            <div class="logo">&lt;img&gt;</div>
-            <div class="profile-photo" id="profile-photo">
-                [Your Photo Here]
-            </div>
-            <div class="logo">&lt;\img&gt;</div>
+<!-- ── NAVBAR ────────────────────────────────────────────────── -->
+<nav class="navbar">
+    <a class="logo" href="#">
+        <span class="logo-white">user</span><span class="logo-box">3301</span>
+    </a>
+    <div class="nav-actions">
+        <a href="https://github.com/user3301" target="_blank" class="nav-btn outline">GitHub</a>
+        <a href="https://linkedin.com/in/user3301" target="_blank" class="nav-btn fill">LinkedIn</a>
+    </div>
+</nav>
 
-            <div class="sidebar-info">
-                <!-- Media Links -->
-                <div class="sidebar-section">
-                    <h3><span class="keyword">public enum</span> MEDIA()</h3>
-                    <div class="bracket">{</div>
-                    <ul class="indent-1" id="media-list"></ul>
-                    <div class="bracket">}</div>
-                </div>
+<!-- ── BANNER ────────────────────────────────────────────────── -->
+<div class="banner">
+    <div class="banner-glow"></div>
+</div>
 
-                <!-- Platforms -->
-                <div class="sidebar-section">
-                    <h3><span class="keyword">public enum</span> PLATFORMS()</h3>
-                    <div class="bracket">{</div>
-                    <ul class="indent-1" id="platforms-list"></ul>
-                    <div class="bracket">}</div>
-                </div>
-
-                <!-- Languages -->
-                <div class="sidebar-section">
-                    <h3><span class="keyword">public enum</span> LANGUAGES()</h3>
-                    <div class="bracket">{</div>
-                    <ul class="indent-1" id="languages-list"></ul>
-                    <div class="bracket">}</div>
-                </div>
-
-                <!-- Software -->
-                <div class="sidebar-section">
-                    <h3><span class="keyword">public enum</span> SOFTWARE()</h3>
-                    <div class="bracket">{</div>
-                    <ul class="indent-1" id="software-list"></ul>
-                    <div class="bracket">}</div>
-                </div>
-
-                <!-- Spoken Languages -->
-                <div class="sidebar-section">
-                    <h3><span class="keyword">public enum</span> SPOKEN_LANGUAGES()</h3>
-                    <div class="bracket">{</div>
-                    <ul class="indent-1" id="spoken-languages-list"></ul>
-                    <div class="bracket">}</div>
-                </div>
-            </div>
+<!-- ── PROFILE SECTION ───────────────────────────────────────── -->
+<div class="profile-section">
+    <div class="profile-top">
+        <div class="avatar-wrap">
+            <img class="avatar" id="avatar-img" src="assets/img/profile_pic.png" alt="User3301">
+            <div class="avatar-fallback" id="avatar-fallback">&#128100;</div>
+            <div class="status-dot" title="Open to opportunities"></div>
         </div>
-
-        <!-- Main Content -->
-        <div class="content">
-            <!-- Summary Header -->
-            <div class="header">
-                <div class="code-line comment">/// &lt;summary&gt;</div>
-                <div id="summary-content"></div>
-                <div class="code-line comment">/// &lt;\summary&gt;</div>
+        <div class="profile-meta">
+            <div class="profile-name-row">
+                <span class="profile-name">User3301</span>
+                <span class="badge">&#10003; Verified Dev</span>
+                <span class="badge open">Open to Work</span>
             </div>
-
-            <!-- Information Section -->
-            <div class="section">
-                <div class="code-line">
-                    <span class="keyword">public class</span> <span class="class-name">INFORMATION</span>
-                </div>
-                <div class="code-line"><span class="bracket">{</span></div>
-                <div id="information-content"></div>
-                <div class="code-line"><span class="bracket">}</span></div>
-            </div>
-
-            <!-- Experiences Section -->
-            <div class="section">
-                <div class="code-line">
-                    <span class="keyword">public static class</span> <span class="class-name">EXPERIENCES</span>
-                </div>
-                <div class="code-line"><span class="bracket">{</span></div>
-                <div id="experiences-content"></div>
-                <div class="code-line"><span class="bracket">}</span></div>
-            </div>
-
-            <!-- Education Section -->
-            <div class="section">
-                <div class="code-line">
-                    <span class="keyword">public partial class</span> <span class="class-name">EDUCATION</span> : <span class="class-name">HigherEducation</span>
-                </div>
-                <div class="code-line"><span class="bracket">{</span></div>
-                <div id="education-content"></div>
-                <div class="code-line"><span class="bracket">}</span></div>
-            </div>
-
-            <!-- Profile Section -->
-            <div class="section">
-                <div class="code-line">
-                    <span class="keyword">public enum</span> <span class="class-name">PROFILE</span>()
-                </div>
-                <div class="code-line"><span class="bracket">{</span></div>
-                <div id="profile-content"></div>
-                <div class="code-line"><span class="bracket">}</span></div>
-            </div>
-
-            <!-- Footer -->
-            <div class="section">
-                <div class="code-line comment" id="footer-link">
-                    /// Made with Claude Code
-                </div>
+            <div class="profile-title">Senior Software Engineer</div>
+            <div class="profile-location">&#128205; UTC+10 &nbsp;&middot;&nbsp; Remote &nbsp;&middot;&nbsp; Available Worldwide</div>
+            <div class="action-row">
+                <a href="https://github.com/user3301" target="_blank" class="btn-primary">GitHub</a>
+                <a href="https://linkedin.com/in/user3301" target="_blank" class="btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:5px"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+                <a href="mailto:" class="btn-secondary">&#128279; Contact</a>
             </div>
         </div>
     </div>
+    <div class="stats-row">
+        <div class="stat">
+            <div class="stat-val">10+</div>
+            <div class="stat-lbl">Years Coding</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val">3</div>
+            <div class="stat-lbl">Companies</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val">2</div>
+            <div class="stat-lbl">Degrees</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val">7+</div>
+            <div class="stat-lbl">Languages</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val">&#9733; Open</div>
+            <div class="stat-lbl">Opportunities</div>
+        </div>
+    </div>
+</div>
 
-    <!-- Load Configuration -->
-    <script src="config.js"></script>
+<!-- ── PAGE LAYOUT ────────────────────────────────────────────── -->
+<div class="page-layout">
 
-    <!-- Populate Content from Config -->
-    <script>
-        // Update page title
-        document.getElementById('page-title').textContent = `${CONFIG.INFORMATION.NAME} - ${CONFIG.INFORMATION.TITLE}`;
+    <!-- SIDE NAV -->
+    <nav class="side-nav" id="side-nav">
+        <a href="#section-about" class="active"><span class="nav-dot"></span>About</a>
+        <a href="#section-experience"><span class="nav-dot"></span>Experience</a>
+        <a href="#section-education"><span class="nav-dot"></span>Education</a>
+        <a href="#section-skills"><span class="nav-dot"></span>Skills</a>
+    </nav>
 
-        // Update profile photo
-        const photoContainer = document.getElementById('profile-photo');
-        if (CONFIG.PHOTO) {
-            photoContainer.innerHTML = `<img src="${CONFIG.PHOTO}" alt="${CONFIG.INFORMATION.NAME}">`;
+    <!-- MAIN CONTENT -->
+    <div class="page-content">
+
+        <!-- ABOUT -->
+        <section class="page-section" id="section-about">
+            <div class="about-layout">
+                <div>
+                    <div class="card">
+                        <div class="card-title">Bio</div>
+                        <div class="bio-text">
+                            <p>Senior Software Engineer with 10+ years of building and refining systems — 9 of those spent hand&#8209;crafting every line before teaming up with AI as a new coding sidekick.</p>
+                            <p>I write clean, high&#8209;signal code, live inside Neovim, and wield a Corne split keyboard like a tiny ergonomic spellbook.</p>
+                            <p>These days, I specialise in turning chaotic codebases into elegant, declarative, well&#8209;behaved systems — ideally from a TUI, with custom keybindings, and a keyboard I soldered myself.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Traits</div>
+                        <div class="tag-cloud">
+                            <span class="tag">Neovim Power-User</span>
+                            <span class="tag">NixOS Enthusiast</span>
+                            <span class="tag">TUI-First Developer</span>
+                            <span class="tag">Split-Keyboard Aficionado</span>
+                            <span class="tag">Linux Ricer</span>
+                            <span class="tag">Declarative OS Purist</span>
+                            <span class="tag">Always-Improving Engineer</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card">
+                        <div class="card-title">Links</div>
+                        <ul class="info-list">
+                            <li>&#128279; <a href="https://github.com/user3301" target="_blank">github.com/user3301</a></li>
+                            <li>&#128188; <a href="https://linkedin.com/in/user3301" target="_blank">linkedin.com/in/user3301</a></li>
+                        </ul>
+                    </div>
+                    <div class="card" style="margin-top:16px">
+                        <div class="card-title">Spoken Languages</div>
+                        <ul class="info-list">
+                            <li>&#127464;&#127475; Mandarin &mdash; <span style="color:#FF9000">Native</span></li>
+                            <li>&#127468;&#127463; English &mdash; <span style="color:#aaa">Working Proficiency</span></li>
+                            <li>&#9881; Phyrexian &mdash; <span style="color:#777">Elementary</span></li>
+                        </ul>
+                    </div>
+                    <div class="card" style="margin-top:16px">
+                        <div class="card-title">Location</div>
+                        <ul class="info-list">
+                            <li>&#127758; UTC+10</li>
+                            <li>&#128421; Remote</li>
+                            <li>&#9992; Available Worldwide</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="page-section" id="section-experience">
+            <div class="section-hdr">
+                <h2>Work Experience</h2>
+                <span class="count">3 positions</span>
+            </div>
+            <div class="exp-grid">
+
+                <div class="exp-card">
+                    <div class="exp-thumb" style="background:linear-gradient(135deg,#0a1a2a,#0d2a1a)">
+                        <span class="exp-co">ANZ Bank</span>
+                        <span class="thumb-badge top-left">Senior</span>
+                        <span class="thumb-badge bot-right">Dec 2019 &ndash; Apr 2026</span>
+                    </div>
+                    <div class="exp-body">
+                        <div class="exp-company">Senior Software Engineer</div>
+                        <div class="exp-meta">ANZ Bank &middot; 6+ years &middot; Melbourne</div>
+                        <div class="exp-desc">Build and maintain secure, high-performance authentication &amp; authorization service for ANZ Plus App.</div>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Golang</span>
+                            <span class="exp-tag">gRPC</span>
+                            <span class="exp-tag">Kubernetes</span>
+                            <span class="exp-tag">GCP</span>
+                            <span class="exp-tag">Skaffold</span>
+                            <span class="exp-tag">Helm</span>
+                            <span class="exp-tag">GNU Make</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-thumb" style="background:linear-gradient(135deg,#1a0a2a,#2a0d1a)">
+                        <span class="exp-co">CallJourney</span>
+                        <span class="thumb-badge top-left">Engineer</span>
+                        <span class="thumb-badge bot-right">Nov 2017 &ndash; Dec 2019</span>
+                    </div>
+                    <div class="exp-body">
+                        <div class="exp-company">Software Engineer</div>
+                        <div class="exp-meta">CallJourneyCI &middot; 2 years</div>
+                        <div class="exp-desc">Developed and maintained backend Text-To-Speech engine for large-scale speech analytics pipelines. R&amp;D for speech-to-text and sentiment analysis.</div>
+                        <div class="exp-tags">
+                            <span class="exp-tag">C# .NET Core</span>
+                            <span class="exp-tag">Python</span>
+                            <span class="exp-tag">Azure</span>
+                            <span class="exp-tag">CosmosDB</span>
+                            <span class="exp-tag">HangfireIO</span>
+                            <span class="exp-tag">TTS/SSML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-thumb" style="background:linear-gradient(135deg,#1a1a0a,#2a1a0d)">
+                        <span class="exp-co">CSI</span>
+                        <span class="thumb-badge top-left">Engineer</span>
+                        <span class="thumb-badge bot-right">Apr 2016 &ndash; Oct 2017</span>
+                    </div>
+                    <div class="exp-body">
+                        <div class="exp-company">Software Engineer</div>
+                        <div class="exp-meta">CustomerSystemsInc &middot; 1.5 years</div>
+                        <div class="exp-desc">Developed the backend workflow for the Customer Relationship Management service.</div>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Java</span>
+                            <span class="exp-tag">Spring Boot</span>
+                            <span class="exp-tag">MySQL</span>
+                            <span class="exp-tag">MyBatis</span>
+                            <span class="exp-tag">Maven</span>
+                            <span class="exp-tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="page-section" id="section-education">
+            <div class="section-hdr">
+                <h2>Education</h2>
+                <span class="count">2 degrees</span>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-thumb">
+                        <div class="edu-icon">&#127891;</div>
+                        <div class="edu-level">Master&rsquo;s Degree</div>
+                    </div>
+                    <div class="edu-body">
+                        <div class="edu-inst">Monash University</div>
+                        <div class="edu-field">Information Technology</div>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-thumb">
+                        <div class="edu-icon">&#128220;</div>
+                        <div class="edu-level">Bachelor&rsquo;s Degree</div>
+                    </div>
+                    <div class="edu-body">
+                        <div class="edu-inst">Monash University</div>
+                        <div class="edu-field">Computer Science</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="page-section" id="section-skills">
+            <div class="section-hdr">
+                <h2>Skills &amp; Tools</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-title">Programming Languages</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Golang</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">Lua</span>
+                        <span class="skill-tag">Nix</span>
+                        <span class="skill-tag">Vimscript</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-title">Platforms &amp; OS</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">NixOS</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Windows</span>
+                        <span class="skill-tag">WSL2</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-title">Tools &amp; Software</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Neovim</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Helm</span>
+                        <span class="skill-tag">Visual Studio</span>
+                        <span class="skill-tag">GNU Make</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-title">Cloud &amp; Infra</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Skaffold</span>
+                        <span class="skill-tag">gRPC</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- /page-content -->
+</div><!-- /page-layout -->
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+    <p>Made with Claude Code &nbsp;&middot;&nbsp; <a href="https://github.com/user3301" target="_blank">github.com/user3301</a></p>
+</footer>
+
+<script>
+    // Avatar fallback
+    var img = document.getElementById('avatar-img');
+    img.addEventListener('error', function() {
+        img.style.display = 'none';
+        document.getElementById('avatar-fallback').style.display = 'flex';
+    });
+
+    // Scroll spy — highlight the nav link whose section is in view
+    var sections = document.querySelectorAll('.page-section');
+    var navLinks = document.querySelectorAll('.side-nav a');
+
+    function updateActiveNav() {
+        var navbarHeight = document.querySelector('.navbar').offsetHeight;
+        var scrollY = window.pageYOffset;
+        var viewportHeight = window.innerHeight;
+        var docHeight = document.documentElement.scrollHeight;
+        var atBottom = scrollY + viewportHeight >= docHeight - 4;
+
+        var activeId = null;
+
+        if (atBottom) {
+            // When at the very bottom, activate the last section
+            activeId = sections[sections.length - 1].getAttribute('id');
+        } else {
+            var threshold = navbarHeight + viewportHeight * 0.25;
+            sections.forEach(function(s) {
+                var top = s.getBoundingClientRect().top + scrollY;
+                if (scrollY + threshold >= top) {
+                    activeId = s.getAttribute('id');
+                }
+            });
         }
 
-        // Populate Platforms
-        const platformsList = document.getElementById('platforms-list');
-        CONFIG.PLATFORMS.forEach(platform => {
-            platformsList.innerHTML += `<li>${platform},</li>`;
+        navLinks.forEach(function(link) {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + activeId);
         });
+    }
 
-        // Populate Programming Languages
-        const languagesList = document.getElementById('languages-list');
-        CONFIG.LANGUAGES.forEach(lang => {
-            languagesList.innerHTML += `<li>${lang},</li>`;
-        });
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
 
-        // Populate Software
-        const softwareList = document.getElementById('software-list');
-        CONFIG.SOFTWARE.forEach(software => {
-            softwareList.innerHTML += `<li>${software},</li>`;
-        });
-
-        // Populate Media Links
-        const mediaList = document.getElementById('media-list');
-        CONFIG.MEDIA.forEach(media => {
-            mediaList.innerHTML += `<li><a href="${media.url}" target="_blank">${media.name}</a></li>`;
-        });
-
-        // Populate Spoken Languages
-        const spokenLanguagesList = document.getElementById('spoken-languages-list');
-        CONFIG.SPOKEN_LANGUAGES.forEach(langue => {
-            spokenLanguagesList.innerHTML += `<li><span class="comment">// ${langue.comment}</span></li>`;
-            spokenLanguagesList.innerHTML += `<li>${langue.language} = <span class="string">${langue.level}</span>,</li>`;
-        });
-
-        // Populate Summary
-        const summaryContent = document.getElementById('summary-content');
-        CONFIG.SUMMARY.forEach(line => {
-            summaryContent.innerHTML += `<div class="code-line comment">/// ${line}</div>`;
-        });
-
-        // Populate Information
-        const informationContent = document.getElementById('information-content');
-        informationContent.innerHTML = `
-            <div class="code-line indent-1">
-                <span class="keyword">public string</span> <span class="property">NAME</span> = <span class="string">"${CONFIG.INFORMATION.NAME}"</span>;
-            </div>
-            <div class="code-line indent-1">
-                <span class="keyword">public string</span> <span class="property">TITLE</span> = <span class="string">"${CONFIG.INFORMATION.TITLE}"</span>;
-            </div>
-            <div class="code-line indent-1">
-                <span class="keyword">public string</span> <span class="property">EMAIL</span> = <span class="string">"${CONFIG.INFORMATION.EMAIL}"</span>;
-            </div>
-            <div class="code-line indent-1">
-                <span class="keyword">public string[]</span> <span class="property">LOCATION</span> = <span class="bracket">{</span>${CONFIG.INFORMATION.LOCATION.map(loc => `<span class="string">"${loc}"</span>`).join(', ')}<span class="bracket">}</span>;
-            </div>
-            <div class="code-line indent-1">
-                <span class="keyword">public bool</span> <span class="property">OPEN_TO_OPPORTUNITIES</span> = <span class="boolean">${CONFIG.INFORMATION.OPEN_TO_OPPORTUNITIES}</span>;
-            </div>
-        `;
-
-        // Populate Education
-        const educationContent = document.getElementById('education-content');
-        CONFIG.EDUCATION.forEach(formation => {
-            educationContent.innerHTML += `
-                <div class="code-line indent-1">
-                    <span class="keyword">private void</span> <span class="property">${formation.title}</span>()
-                </div>
-                <div class="code-line indent-1"><span class="bracket">{</span></div>
-            `;
-
-            if (formation.niveau) {
-                educationContent.innerHTML += `
-                    <div class="code-line indent-2">
-                        <span class="keyword">var</span> <span class="property">_Degree</span> = <span class="class-name">${formation.niveau}</span>;
-                    </div>
-                `;
-            }
-
-            if (formation.institution) {
-                educationContent.innerHTML += `
-                    <div class="code-line indent-2">
-                        <span class="keyword">var</span> <span class="property">_Institution</span> = <span class="string">"${formation.institution}"</span>;
-                    </div>
-                `;
-            }
-
-            if (formation.type) {
-                educationContent.innerHTML += `
-                    <div class="code-line indent-2">
-                        <span class="keyword">var</span> <span class="property">_Type</span> = <span class="class-name">${formation.type}</span>;
-                    </div>
-                `;
-            }
-
-            if (formation.focus) {
-                educationContent.innerHTML += `
-                    <div class="code-line indent-2">
-                        <span class="keyword">var</span> <span class="property">_Focus</span> = <span class="string">"${formation.focus}"</span>;
-                    </div>
-                `;
-            }
-
-            if (formation.platforms) {
-                educationContent.innerHTML += `
-                    <div class="code-line indent-2">
-                        <span class="keyword">var</span> <span class="property">_Platforms</span> = <span class="bracket">{</span>${formation.platforms.map(p => `<span class="string">"${p}"</span>`).join(', ')}<span class="bracket">}</span>;
-                    </div>
-                `;
-            }
-
-            educationContent.innerHTML += `
-                <div class="code-line indent-1"><span class="bracket">}</span></div>
-            `;
-        });
-
-        // Populate Experiences
-        const experiencesContent = document.getElementById('experiences-content');
-        CONFIG.EXPERIENCES.forEach(exp => {
-            experiencesContent.innerHTML += `
-                <div class="code-line indent-1">
-                    <span class="keyword">public void</span> <span class="property">${exp.title}</span>()
-                </div>
-                <div class="code-line indent-1"><span class="bracket">{</span></div>
-            `;
-
-            if (exp.role) {
-                experiencesContent.innerHTML += `
-                    <div class="code-line indent-2">
-                        <span class="keyword">var</span> <span class="property">_Role</span> = <span class="string">"${exp.role}"</span>;
-                    </div>
-                `;
-            }
-
-            if (exp.startDate && exp.endDate) {
-                experiencesContent.innerHTML += `
-                    <div class="code-line indent-2">
-                        <span class="keyword">var</span> <span class="property">_Duration</span> = <span class="string">"${exp.startDate} - ${exp.endDate}"</span>;
-                    </div>
-                `;
-            }
-
-            if (exp.technologies) {
-                experiencesContent.innerHTML += `
-                    <div class="code-line indent-2">
-                        <span class="keyword">var</span> <span class="property">_Technologies</span> = <span class="bracket">{</span>${exp.technologies.map(t => `<span class="string">"${t}"</span>`).join(', ')}<span class="bracket">}</span>;
-                    </div>
-                `;
-            }
-
-            if (exp.description) {
-                experiencesContent.innerHTML += `
-                    <div class="code-line indent-2">
-                        <span class="keyword">var</span> <span class="property">_Description</span> = <span class="string">"${exp.description}"</span>;
-                    </div>
-                `;
-            }
-
-            if (exp.focus) {
-                experiencesContent.innerHTML += `
-                    <div class="code-line indent-2">
-                        <span class="keyword">var</span> <span class="property">_Focus</span> = <span class="string">"${exp.focus}"</span>;
-                    </div>
-                `;
-            }
-
-            if (exp.skills) {
-                experiencesContent.innerHTML += `
-                    <div class="code-line indent-2">
-                        <span class="keyword">var</span> <span class="property">_Skills</span> = <span class="bracket">{</span>${exp.skills.map(s => `<span class="string">"${s}"</span>`).join(', ')}<span class="bracket">}</span>;
-                    </div>
-                `;
-            }
-
-            experiencesContent.innerHTML += `
-                <div class="code-line indent-1"><span class="bracket">}</span></div>
-            `;
-        });
-
-        // Populate Profile
-        const profileContent = document.getElementById('profile-content');
-        CONFIG.PROFILE.forEach((trait, index) => {
-            const comma = index < CONFIG.PROFILE.length - 1 ? ',' : '';
-            profileContent.innerHTML += `
-                <div class="code-line indent-1">
-                    <span class="property">${trait}</span>${comma}
-                </div>
-            `;
-        });
-
-        // Update footer link
-        if (CONFIG.MEDIA.length > 0) {
-            const githubLink = CONFIG.MEDIA.find(m => m.name.toLowerCase() === 'github');
-            if (githubLink) {
-                document.getElementById('footer-link').innerHTML = `
-                    /// Made with Claude Code - <a href="${githubLink.url}" target="_blank">${githubLink.url.replace('https://', '')}</a>
-                `;
-            }
-        }
-
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const body = document.body;
-
-        // Check for saved theme preference or default to dark
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-
-        if (currentTheme === 'light') {
-            body.classList.add('light-theme');
-            themeIcon.textContent = '☀️';
-        }
-
-        // Toggle theme on button click
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-theme');
-
-            if (body.classList.contains('light-theme')) {
-                themeIcon.textContent = '☀️';
-                localStorage.setItem('theme', 'light');
-            } else {
-                themeIcon.textContent = '🌙';
-                localStorage.setItem('theme', 'dark');
+    // Smooth scroll on nav click
+    var navbarHeight = document.querySelector('.navbar').offsetHeight;
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                var top = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 12;
+                window.scrollTo({ top: top, behavior: 'smooth' });
             }
         });
-    </script>
+    });
+</script>
 </body>
 </html>
