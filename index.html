@@ -590,7 +590,7 @@
             <div class="stat-lbl">Years Coding</div>
         </div>
         <div class="stat">
-            <div class="stat-val">3</div>
+            <div class="stat-val" id="stat-companies"></div>
             <div class="stat-lbl">Companies</div>
         </div>
         <div class="stat">
@@ -679,7 +679,7 @@
         <section class="page-section" id="section-experience">
             <div class="section-hdr">
                 <h2>Work Experience</h2>
-                <span class="count">3 positions</span>
+                <span class="count" id="exp-positions"></span>
             </div>
             <div class="exp-grid">
 
@@ -859,7 +859,14 @@
     <p>Made with Claude Code &nbsp;&middot;&nbsp; <a href="https://github.com/user3301" target="_blank">github.com/user3301</a></p>
 </footer>
 
+<script src="config.js"></script>
 <script>
+    // Populate experience counts from CONFIG
+    var expCount = CONFIG.EXPERIENCES.length;
+    var uniqueCompanies = new Set(CONFIG.EXPERIENCES.map(function(e) { return e.title; })).size;
+    document.getElementById('stat-companies').textContent = uniqueCompanies;
+    document.getElementById('exp-positions').textContent = expCount + (expCount === 1 ? ' position' : ' positions');
+
     // Avatar fallback
     var img = document.getElementById('avatar-img');
     img.addEventListener('error', function() {
