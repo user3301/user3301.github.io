@@ -75,6 +75,14 @@ const CONFIG = {
   // Work Experience
   EXPERIENCES: [
     {
+      title: "Microsoft",
+      role: "Senior Software Engineer",
+      startDate: "May 2026",
+      endDate: "Present",
+      technologies: [".NET", "PowerShell", "Azure", "Azure Client Tools"],
+      description: "Azure experience & ecosystems"
+    },
+    {
       title: "ANZBank",
       role: "Senior Software Engineer",
       startDate: "December 2019",
