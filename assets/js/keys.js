@@ -65,7 +65,7 @@ function showWhichKey(prefix = '') {
         pending = '';
         runAction(btn.dataset.act);
       } else {
-        pending = key;
+        setPending(key, { timeout: false });
         showWhichKey(key);
       }
     });
@@ -178,9 +178,17 @@ function runCommand(raw) {
 
 /* ── Normal mode ───────────────────────────────────────────────────────── */
 
-function setPending(key) {
+/**
+ * Hold a partial key sequence. Plain sequences like `g` time out the way
+ * vim's `timeoutlen` does, but once the which-key popup is on screen it stays
+ * until you press a key, hit Escape, or click away — which is how
+ * which-key.nvim behaves. `timeoutlen` there gates how long before the popup
+ * appears, not how long it lives.
+ */
+function setPending(key, { timeout = true } = {}) {
   pending = key;
   clearTimeout(pendingTimer);
+  if (!timeout) return;
   pendingTimer = setTimeout(() => { pending = ''; hideWhichKey(); leader = false; }, 1400);
 }
 
@@ -220,7 +228,7 @@ function onKeydown(e) {
       return;
     }
     const root = WK_ROOT.find((i) => i.key === key);
-    if (root?.group) { setPending(key); showWhichKey(key); return; }
+    if (root?.group) { setPending(key, { timeout: false }); showWhichKey(key); return; }
     if (root?.act) {
       clearPending();
       if (root.act === 'cmd:explorer') toggleExplorer();
@@ -234,7 +242,7 @@ function onKeydown(e) {
   if (key === ' ' && !ctrl) {
     e.preventDefault();
     leader = true;
-    setPending('');
+    setPending('', { timeout: false });
     showWhichKey();
     return;
   }
@@ -330,6 +338,14 @@ export function initKeys() {
         runCommand(value);
       }
     }
+  });
+
+  // The popup no longer times out, so clicking away is how you dismiss it
+  // without choosing something. Escape works too, via onKeydown.
+  document.addEventListener('mousedown', (e) => {
+    if (!wk.root.classList.contains('open')) return;
+    if (e.target.closest('#whichkey')) return;
+    clearPending();
   });
 
   document.addEventListener('keydown', onKeydown);

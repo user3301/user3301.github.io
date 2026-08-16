@@ -117,7 +117,8 @@ export const SCHEMES = {
 };
 
 export const SCHEME_NAMES = Object.keys(SCHEMES);
-export const DEFAULT_SCHEME = 'tokyonight-night';
+export const DEFAULT_SCHEME = 'gruvbox-dark';
+export const DEFAULT_LIGHT_SCHEME = 'gruvbox-light';
 const STORAGE_KEY = 'nvim-colorscheme';
 
 /** Blend `hex` toward `to` by `amount` (0..1). Used for derived tints. */
@@ -225,7 +226,8 @@ export function savedScheme() {
   }
   if (stored && SCHEMES[stored]) return stored;
 
-  // No stored preference: respect the OS light/dark setting.
+  // No stored preference: respect the OS light/dark setting, staying within
+  // the default theme's own family rather than jumping to another palette.
   const prefersLight = window.matchMedia?.('(prefers-color-scheme: light)').matches;
-  return prefersLight ? 'tokyonight-day' : DEFAULT_SCHEME;
+  return prefersLight ? DEFAULT_LIGHT_SCHEME : DEFAULT_SCHEME;
 }
