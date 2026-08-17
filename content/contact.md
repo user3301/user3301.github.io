@@ -1,6 +1,6 @@
 # Contact
 
-Open to opportunities. Remote, worldwide, UTC+10.
+Remote, worldwide, UTC+10.
 
 | Where | Link |
 |---|---|

@@ -10,7 +10,6 @@ M.setup = function()
     name     = "user3301",
     title    = "Senior Software Engineer",
     location = { tz = "UTC+10", remote = true, worldwide = true },
-    status   = "open_to_opportunities",
 
     experience_years = 10,
 

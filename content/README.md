@@ -23,7 +23,6 @@ keyboard I soldered myself.
 | **Company** | Microsoft |
 | **Timezone** | UTC+10 |
 | **Remote** | Available worldwide |
-| **Status** | Open to opportunities |
 
 ## Traits
 

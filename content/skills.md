@@ -5,7 +5,7 @@
 | Language | Level | Where |
 |---|---|---|
 | Go | Primary | ANZ — gRPC services, authn/authz |
-| C# / .NET | Primary | Microsoft, CallJourney |
+| C# / .NET | Primary | Microsoft |
 | Java | Working | Spring Boot backends |
 | Python | Working | R&D, tooling, scripting |
 | Lua | Working | Neovim configuration |
