@@ -51,12 +51,12 @@ assets/js/
 
 ## Notes
 
-- **Colorschemes** — gruvbox (dark/light, the default), tokyonight
-  (night/storm/day), catppuccin (mocha/latte), kanagawa, rose-pine, nord.
-  Switch with `:colorscheme` or `<Space>uc`; the choice persists in
-  `localStorage`, and a first-time visitor gets gruvbox-dark or gruvbox-light
-  depending on their OS light/dark preference. The fallback palette at the top
-  of `nvim.css` mirrors the default so the first paint doesn't flash.
+- **Colorschemes** — gruvbox (dark/light), tokyonight (night/storm/day),
+  catppuccin (mocha/latte), kanagawa, rose-pine, nord. Switch with
+  `:colorscheme` or `<Space>uc`; the choice persists in `localStorage`, and a
+  first-time visitor always gets gruvbox-dark regardless of their OS
+  light/dark preference. The fallback palette at the top of `nvim.css` mirrors
+  the default so the first paint doesn't flash.
 - **No Nerd Font required.** Filetype icons are inline SVG and all chrome
   (borders, tree guides, powerline separators, bullets) is drawn in CSS. The
   bundled JetBrains Mono subset has no glyphs above U+2500, so box-drawing
