@@ -6,6 +6,7 @@
 |---|---|---|
 | Go | Primary | ANZ — gRPC services, authn/authz |
 | C# / .NET | Primary | Microsoft |
+| Rust | Primary | Microsoft |
 | Java | Working | Spring Boot backends |
 | Python | Working | R&D, tooling, scripting |
 | Lua | Working | Neovim configuration |
@@ -23,7 +24,7 @@
 ## Infrastructure
 
 ```yaml
-orchestration:  Kubernetes, Helm, Skaffold
+orchestration:  Kubernetes, Helm, Skaffold, Aspire
 cloud:          GCP, Azure, AWS
 protocols:      gRPC, protobuf, OAuth2, OIDC
 containers:     Docker, buildah

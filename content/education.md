@@ -2,15 +2,11 @@
 
 ## Monash University
 
-**Master of Computer Science**
-
-Melbourne, Australia
+**Master of Computer Science** · 2014 – 2015 · Melbourne, Australia
 
 ## Monash University
 
-**Bachelor of Computer Science**
-
-Melbourne, Australia
+**Bachelor of Computer Science** · 2010 – 2013 · Melbourne, Australia
 
 ---
 

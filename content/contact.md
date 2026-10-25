@@ -6,7 +6,7 @@ Remote, worldwide, UTC+10.
 |---|---|
 | GitHub | [github.com/user3301](https://github.com/user3301) |
 | LinkedIn | [linkedin.com/in/user3301](https://linkedin.com/in/user3301) |
-| Email | {{email}} |
+| Email | `emhlbHVuLmdhaUBnbWFpbC5jb20=` |
 
 ## Working with me
 
@@ -16,5 +16,5 @@ Remote, worldwide, UTC+10.
 - I will probably suggest deleting something
 
 > [!NOTE]
-> The email above is assembled in your browser, not written in the page source.
-> Scrapers get nothing.
+> The email above is base64. `base64 -d` will sort you out.
+> Scrapers get a string.
